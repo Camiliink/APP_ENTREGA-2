@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonFooter, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
-import { Usuario } from 'src/app/model/usuario';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
@@ -18,43 +17,67 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './ingreso.page.html',
   styleUrls: ['./ingreso.page.scss'],
   standalone: true,
-  imports: [IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonFooter, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonItem, LanguageComponent]
+  imports: [IonCardContent, IonCardTitle,
+     IonCardHeader, IonCard, IonFooter, IonButton,
+      IonContent, IonHeader, IonTitle, IonToolbar, 
+      CommonModule,
+      FormsModule, 
+      IonItem
+      , LanguageComponent           
+      , IonicModule             
+      , TranslateModule         
+      ]
 })
-export class IngresoPage {
 
-  public usuario: Usuario;
+export class IngresoPage implements ViewWillEnter {
+
+  /** 
+   * CGV-INI-Traducciones
+   * Para poder utilizar la traducción de textos, se debe:
+   *   1. Ejecutar: npm i @ngx-translate/core 
+   *   2. Ejecutar: npm i @ngx-translate/http-loader
+   *   3. Crear carpeta: src/app/assets/i18n
+   *   4. Crear archivo: src/app/assets/i18n/es.json para los textos en español
+   *   5. Crear archivo: src/app/assets/i18n/en.json para los textos en inglés
+   * 
+   * CGV-FIN-Traducciones
+  */ 
+
+  @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
+
+  correo: string;
+  password: string;
 
   constructor(
       private router: Router
-    , private activatedRoute: ActivatedRoute
-    , private toastController: ToastController) 
-  {
-    this.usuario = new Usuario();
-    this.usuario.recibirUsuario(activatedRoute, router);
-    this.usuario.cuenta = 'agarcia';
-    this.usuario.password = '1234';
-  }
-  public ingresarValidarCorreo(): void {
-    this.router.navigate(['/correo']);
+    , private translate: TranslateService
+    , private authService: AuthService) 
+  { 
+    this.correo = 'atorres';
+    this.password = '1234';
+    // Los iconos deben ser agregados a uno (ver en https://ionic.io/ionicons)
+    addIcons({ colorWandOutline }); 
   }
 
-  ingresar() {
-    const error = this.usuario.validarUsuario();
-    if(error) {
-      this.mostrarMensajeEmergente(error);
-      return;
-    } 
-    this.mostrarMensajeEmergente('¡Bienvenido(a) al Sistema de Asistencia DUOC!');
-    this.usuario.navegarEnviandousuario(this.router, '/inicio');
+  async ionViewWillEnter() {
+    this.selectLanguage.setCurrentLanguage();
   }
 
-  async mostrarMensajeEmergente(mensaje: string, duracion?: number) {
-    const toast = await this.toastController.create({
-        message: mensaje,
-        duration: duracion? duracion: 2000
-      });
-    toast.present();
+  navigateTheme() {
+    this.router.navigate(['/theme']);
   }
-  
+
+  login() {
+    this.authService.login(this.correo, this.password);
   }
+
+  registerNewUser() {
+
+  }
+
+  passwordRecovery() {
+    
+  }
+
+}
   

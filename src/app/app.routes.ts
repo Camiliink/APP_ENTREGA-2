@@ -8,7 +8,11 @@ export const routes: Routes = [
     redirectTo: 'ingreso',
     pathMatch: 'full',
   },
-
+  {
+    path: 'ingreso',
+    loadComponent: () => import('./pages/ingreso/ingreso.page').then( m => m.IngresoPage),
+    canActivate: [loginGuard]
+  },
   {
     path: 'map',
     loadComponent: () => import('./pages/map/map.page').then( m => m.MapPage),
@@ -17,12 +21,7 @@ export const routes: Routes = [
     path: 'theme',
     loadComponent: () => import('./pages/theme/theme.page').then( m => m.ThemePage)
   },
-  
-  {
-    path: 'ingreso',
-    loadComponent: () => import('./pages/ingreso/ingreso.page').then( m => m.IngresoPage),
-    canActivate: [loginGuard]
-  },
+
   {
     path: 'correo',
     loadComponent: () => import('./pages/correo/correo.page').then( m => m.CorreoPage)
