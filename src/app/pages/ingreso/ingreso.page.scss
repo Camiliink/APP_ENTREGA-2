@@ -1,0 +1,91 @@
+ion-content{
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
+
+ion-item{
+  --padding-bottom: 10px;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  height: 90vh;           /* Ocupa toda la altura de la pantalla */
+}
+
+.foto-portada {
+  width: 100%;
+}
+
+@media screen and (orientation: landscape) {
+  .center-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 80%;           /* Ocupa toda la altura de la pantalla */
+    width: 80%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .foto-portada {
+    width: 30%;
+  }
+}
+
+.centrar {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+}
+.footer {
+  background-color: #1A1A1A; /* Color negro de la paleta */
+  color: #FFFFFF; /* Texto en blanco para el footer */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+  text-align: center; /* Centra el texto dentro del footer */
+}
+
+.fondo-contenido {
+  --background: transparent; /* Elimina cualquier fondo predefinido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tarjeta-fondo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Asegúrate de que el contenido esté encima del fondo */
+}
+
+.foto-portada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para cubrir el espacio sin deformarse */
+}
+
+ion-button {
+  transition: transform 0.2s ease; /* Transición suave para el cambio de tamaño */
+  margin: 0 10px; /* Añade margen horizontal entre los botones */
+}
+
+ion-button:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
+
+/* Otras propiedades opcionales para un mejor efecto visual */
+ion-button:active {
+  transform: scale(0.95); /* Escala hacia abajo al hacer clic */
+}
