@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DinosaurComponent } from 'src/app/components/dinosaur/dinosaur.component';
 import { AuthService } from 'src/app/services/auth.service';
-import { IonContent } from '@ionic/angular/standalone'
+import { IonContent } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -20,10 +20,16 @@ import { ForumComponent } from 'src/app/components/forum/forum.component';
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
   imports: [
-      CommonModule, FormsModule, TranslateModule, IonContent
-    , HeaderComponent, FooterComponent
-    , WelcomeComponent, QrWebScannerComponent, DinosaurComponent
-    , ForumComponent
+    CommonModule, 
+    FormsModule, 
+    TranslateModule, 
+    IonContent,
+    HeaderComponent, 
+    FooterComponent,
+    WelcomeComponent, 
+    QrWebScannerComponent, 
+    DinosaurComponent,
+    ForumComponent
   ]
 })
 export class InicioPage {
@@ -38,15 +44,14 @@ export class InicioPage {
   }
 
   async headerClick(button: string) {
-
     if (button === 'testqr')
       this.showDinoComponent(Dinosaur.jsonDinoExample);
 
     if (button === 'scan' && Capacitor.getPlatform() === 'web')
-      this.selectedComponent = 'qrwebscanner';
+      this.selectedComponent = 'codigoqr'; // Cambié a 'codigoqr'
 
     if (button === 'scan' && Capacitor.getPlatform() !== 'web')
-        this.showDinoComponent(await this.scanner.scan());
+      this.showDinoComponent(await this.scanner.scan());
   }
 
   webQrScanned(qr: string) {
@@ -58,7 +63,6 @@ export class InicioPage {
   }
 
   showDinoComponent(qr: string) {
-
     if (Dinosaur.isValidDinosaurQrCode(qr)) {
       this.auth.qrCodeData.next(qr);
       this.changeComponent('dinosaur');
