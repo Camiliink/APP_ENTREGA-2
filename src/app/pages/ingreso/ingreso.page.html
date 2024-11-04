@@ -9,9 +9,6 @@
     <div slot="start" class="ion-margin">
       <app-language #selectLanguage></app-language>
     </div>
-    <div class="show-in-landscape">
-      <h1 class="glow-text"> {{ 'AppName' | translate }} </h1>
-    </div>
     <div slot="end" class="ion-margin">
       <ion-button shape="round" size="small" (click)="navigateTheme()">
         Tema
@@ -21,14 +18,13 @@
    </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
+ 
+  <img alt="DUOC" src="../../../assets/img/pao.jpg" class="foto-portada" />
 
-  <img class="background-image" src="/assets/images/bronto-portrait-04.jpg">
   
-  <h1 class="glow-text show-in-portrait margin-top-6"> {{ 'AppName' | translate }} </h1>
-
   <ion-card class="login-container transparent-input">
-
     <ion-card-header class="show-in-portrait">
       <ion-card-title color="light" class="glow-text">
         <h4>

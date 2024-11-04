@@ -17,12 +17,9 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './ingreso.page.html',
   styleUrls: ['./ingreso.page.scss'],
   standalone: true,
-  imports: [IonCardContent, IonCardTitle,
-     IonCardHeader, IonCard, IonFooter, IonButton,
-      IonContent, IonHeader, IonTitle, IonToolbar, 
+  imports: [
       CommonModule,
-      FormsModule, 
-      IonItem
+      FormsModule
       , LanguageComponent           
       , IonicModule             
       , TranslateModule         
