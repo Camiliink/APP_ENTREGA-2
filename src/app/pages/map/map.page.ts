@@ -150,7 +150,7 @@ export class MapPage implements OnInit {
   }
 
   navegarMisDatos() {
-    //this.router.navigate(['/mis-datos']);
+    this.router.navigate(['/mis-datos']);
   }
 
 }
