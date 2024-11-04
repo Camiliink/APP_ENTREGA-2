@@ -45,6 +45,9 @@
     "ThemePage.Button.Dark": "Dark Button",
     "ThemePage.Button.Home": "Home",
     "ThemePage.Button.Logout": "Logout",
+    "HomePage.Button.misdatos": "My data",
+    "HomePage.Button.miclase": "my classes",
+
     
     "ThemePage.Card.Title": "Card Title",
     "ThemePage.Card.Subtitle": "Card Subtitle",

@@ -45,6 +45,9 @@
     "ThemePage.Button.Dark": "Botón Oscuro",
     "ThemePage.Button.Home": "Inicio",
     "ThemePage.Button.Logout": "Salir",
+    "HomePage.Button.misdatos": "Mis datos",
+    "HomePage.Button.miclase": "Mis clases",
+
     
     "ThemePage.Card.Title": "Título de la Tarjeta",
     "ThemePage.Card.Subtitle": "Subtítulo de la Tarjeta",
