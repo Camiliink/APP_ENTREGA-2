@@ -57,7 +57,7 @@
       </ion-item>
 
       <div class="ion-text-center margin-top-6" style="clear: both;">
-        <ion-button class="enter-button normal-text" shape="round" (click)="login()">
+        <ion-button color="warning" class="enter-button normal-text" shape="round" (click)="login()">
           {{ 'Login.Button.Login' | translate }}
         </ion-button>
       </div>
@@ -69,13 +69,13 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button color="primary" shape="block" (click)="registerNewUser()">
+  <ion-button color="warning" shape="block" (click)="registerNewUser()">
     {{ 'Login.Button.Signin' | translate }}
   </ion-button>
-  <ion-button color="secondary" shape="block" (click)="passwordRecovery()">
+  <ion-button color="warning" shape="block" (click)="passwordRecovery()">
     {{ 'Login.Button.ForgotPassword' | translate }}
   </ion-button>
-  <ion-button color="secondary" shape="block" (click)="navigateRouteToDuoc()">
+  <ion-button color="warning" shape="block" (click)="navigateRouteToDuoc()">
     {{ 'Ruta' | translate }}
   </ion-button>
   
