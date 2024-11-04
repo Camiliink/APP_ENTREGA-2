@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header 
+  (headerClick)="headerClick($event)">
+</app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <app-qrwebscanner 
+    *ngIf="selectedComponent === 'qrwebscanner'" 
+    (scanned)="webQrScanned($event)"
+    (stopped)="webQrStopped()">
+  </app-qrwebscanner >
+  
+  <app-welcome 
+    *ngIf="selectedComponent === 'welcome'">
+  </app-welcome>
+
+  <app-dinosaur 
+    *ngIf="selectedComponent === 'dinosaur'">
+  </app-dinosaur>
+
+  <app-forum 
+    *ngIf="selectedComponent === 'forum'">
+  </app-forum>
+
 </ion-content>
+
+<app-footer
+  (footerClick)="footerClick($event)">
+</app-footer>
