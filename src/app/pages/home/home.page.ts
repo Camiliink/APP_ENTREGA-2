@@ -13,6 +13,7 @@ import { Capacitor } from '@capacitor/core';
 import { ScannerService } from 'src/app/services/scanner.service';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { ForumComponent } from 'src/app/components/forum/forum.component';
+import { Asistencia } from 'src/app/model/asistencia';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +41,7 @@ export class HomePage {
   async headerClick(button: string) {
 
     if (button === 'testqr')
-      this.showDinoComponent(Dinosaur.jsonDinoExample);
+      this.showDinoComponent(Asistencia.jsonAsisExample);
 
     if (button === 'scan' && Capacitor.getPlatform() === 'web')
       this.selectedComponent = 'qrwebscanner';
@@ -59,7 +60,7 @@ export class HomePage {
 
   showDinoComponent(qr: string) {
 
-    if (Dinosaur.isValidDinosaurQrCode(qr)) {
+    if (Asistencia.isValidAsistenciaQrCode(qr)) {
       this.auth.qrCodeData.next(qr);
       this.changeComponent('dinosaur');
       return;

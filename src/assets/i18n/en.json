@@ -47,6 +47,7 @@
     "ThemePage.Button.Logout": "Logout",
     "HomePage.Button.misdatos": "My data",
     "HomePage.Button.miclase": "my classes",
+    "HomePage.Button.QR" : "QR",
 
     
     "ThemePage.Card.Title": "Card Title",

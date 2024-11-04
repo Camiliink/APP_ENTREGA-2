@@ -3,25 +3,32 @@
 </app-header>
 
 <ion-content [fullscreen]="true">
-
+  <!-- Componente QR Web Scanner -->
   <app-qrwebscanner 
-    *ngIf="selectedComponent === 'qrwebscanner'" 
-    (scanned)="webQrScanned($event)"
-    (stopped)="webQrStopped()">
-  </app-qrwebscanner >
-  
+      *ngIf="selectedComponent === 'codigoqr'" 
+      (scanned)="webQrScanned($event)"
+      (stopped)="webQrStopped()">
+  </app-qrwebscanner>
+
+  <!-- Componente Welcome -->
   <app-welcome 
-    *ngIf="selectedComponent === 'welcome'">
+      *ngIf="selectedComponent === 'welcome'">
   </app-welcome>
 
-  <app-dinosaur 
-    *ngIf="selectedComponent === 'dinosaur'">
-  </app-dinosaur>
-
+  <!-- Componente Forum -->
   <app-forum 
-    *ngIf="selectedComponent === 'forum'">
+      *ngIf="selectedComponent === 'forum'">
   </app-forum>
 
+  <!-- Componente Mi Clase -->
+  <app-forum 
+      *ngIf="selectedComponent === 'miclase'">
+  </app-forum>
+
+  <!-- Componente Mis Datos -->
+  <app-forum 
+      *ngIf="selectedComponent === 'misdatos'">
+  </app-forum>
 </ion-content>
 
 <app-footer
