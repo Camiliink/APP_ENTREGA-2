@@ -5,7 +5,7 @@
 <ion-content [fullscreen]="true">
   <!-- Componente QR Web Scanner -->
   <app-qrwebscanner 
-      *ngIf="selectedComponent === 'qrwebscanner'" 
+      *ngIf="selectedComponent === 'codigoqr'" 
       (scanned)="webQrScanned($event)"
       (stopped)="webQrStopped()">
   </app-qrwebscanner>
