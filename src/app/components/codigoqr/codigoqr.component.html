@@ -1,6 +1,9 @@
 <ion-content class="ion-padding ion-text-center" class="video-container">
-
-  <img class="background-image" src="/assets/images/circuit.jpg">
+  <div class="ion-text-center">
+    <h1> Bienvenido(a) </h1>
+    <h1> {{ user.firstName}} {{ user.lastName }} </h1>
+  </div>
+  
 
   <ion-button class="stop-button" (click)="stopQrScanning()">
     Detener escaneo de QR

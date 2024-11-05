@@ -68,7 +68,7 @@
 
 .stop-button {
   position: absolute;
-  top: 10px; /* Ajusta para poner el botón dentro del recuadro del video */
+  bottom: 150px; /* Ajusta para poner el botón dentro del recuadro del video */
   left: 50%;
   transform: translateX(-50%); /* Centra horizontalmente */
   z-index: 10; /* Asegura que el botón esté sobre el video y el overlay */
