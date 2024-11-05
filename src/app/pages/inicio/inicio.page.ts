@@ -16,6 +16,7 @@ import { ForumComponent } from 'src/app/components/forum/forum.component';
 import { Asistencia } from 'src/app/model/asistencia';
 import { ForoComponent } from "src/app/components/foro/foro.component";
 import { MisdatosComponent} from "src/app/components/misdatos/misdatos.component";
+import { MiclaseComponent } from "src/app/components/miclase/miclase.component";
 
 @Component({
   selector: 'app-inicio',
@@ -34,7 +35,8 @@ import { MisdatosComponent} from "src/app/components/misdatos/misdatos.component
     DinosaurComponent,
     ForumComponent,
     ForoComponent,
-    MisdatosComponent
+    MisdatosComponent,
+    MiclaseComponent
 ]
 })
 export class InicioPage {
