@@ -52,27 +52,27 @@ export class InicioPage {
 
   async headerClick(button: string) {
     if (button === 'testqr')
-      this.showDinoComponent(Asistencia.jsonAsisExample);
+      this.showMiclaseComponent(Asistencia.jsonAsisExample);
 
     if (button === 'scan' && Capacitor.getPlatform() === 'web')
       this.selectedComponent = 'codigoqr'; // Cambié a 'codigoqr'
 
     if (button === 'scan' && Capacitor.getPlatform() !== 'web')
-      this.showDinoComponent(await this.scanner.scan());
+      this.showMiclaseComponent(await this.scanner.scan());
   }
 
   webQrScanned(qr: string) {
-    this.showDinoComponent(qr);
+    this.showMiclaseComponent(qr);
   }
 
   webQrStopped() {
     this.changeComponent('welcome');
   }
 
-  showDinoComponent(qr: string) {
+  showMiclaseComponent(qr: string) {
     if (Asistencia.isValidAsistenciaQrCode(qr)) {
       this.auth.qrCodeData.next(qr);
-      this.changeComponent('dinosaur');
+      this.changeComponent('asis');
       return;
     }
     
