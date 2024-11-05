@@ -1,3 +1,68 @@
-<p>
-  misdatos works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="guardarDatos()" #userForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.userName" name="userName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.email" name="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Pregunta Secreta</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.secretQuestion" name="secretQuestion" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Respuesta Secreta</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.secretAnswer" name="secretAnswer" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.firstName" name="firstName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.lastName" name="lastName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nivel Educacional</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.educationalLevel.name" name="educationalLevel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha de Nacimiento</ion-label>
+      <ion-input type="date" [(ngModel)]="usuario.dateOfBirth" name="dateOfBirth" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Imagen</ion-label>
+      <input type="file" (change)="onImageSelected($event)" />
+      <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagen de perfil" style="width: 100px; height: auto;" />
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!userForm.form.valid">Guardar Cambios</ion-button>
+
+
+

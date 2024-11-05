@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { showAlertError, showToast } from 'src/app/tools/message-functions';
-import { User } from '../model/user';
+import { User } from '../model/user'; // Usar solo User
 import { Storage } from '@ionic/storage-angular';
 import { DatabaseService } from './database.service';
 
@@ -10,14 +10,13 @@ import { DatabaseService } from './database.service';
   providedIn: 'root'
 })
 export class AuthService {
-
   storageAuthUserKey = 'AUTHENTICATED_USER';
   authUser = new BehaviorSubject<User | null>(null);
   isFirstLogin = new BehaviorSubject<boolean>(false);
   storageQrCodeKey = 'QR_CODE';
   qrCodeData = new BehaviorSubject<string | null>(null);
 
-  constructor(private router: Router, private db: DatabaseService, private storage: Storage) { }
+  constructor(private router: Router, private db: DatabaseService, private storage: Storage) {}
 
   async initializeAuthService() {
     try {
@@ -38,8 +37,8 @@ export class AuthService {
 
   async readAuthUser(): Promise<User | null> {
     try {
-      const user = (await this.storage.get(this.storageAuthUserKey)) as User | null;
-      this.authUser.next(user ?? null);
+      const user = await this.storage.get(this.storageAuthUserKey) as User | null;
+      this.authUser.next(user);
       return user;
     } catch (error) {
       showAlertError('AuthService.readAuthUser', error);
@@ -71,7 +70,7 @@ export class AuthService {
 
   async login(userName: string, password: string): Promise<boolean> {
     try {
-      const authUser = await this.storage.get(this.storageAuthUserKey);
+      const authUser = await this.readAuthUser();
 
       if (authUser) {
         this.authUser.next(authUser);
@@ -88,7 +87,7 @@ export class AuthService {
           await this.router.navigate(['/inicio']);
           return true;
         } else {
-          showToast('El correo o la password son incorrectos');
+          showToast('El correo o la contraseña son incorrectos');
           await this.router.navigate(['/ingreso']);
           return false;
         }
@@ -115,6 +114,10 @@ export class AuthService {
       return false;
     }
   }
+
+
+
+
 
   // async readQrFromStorage(): Promise<string | null> {
   //   try {

@@ -12,6 +12,7 @@ export class Usuario extends Persona {
   public respuestaSecreta: string;
   public asistencia: Asistencia;
   public listaUsuarios: Usuario[];
+  public direccion: string; 
 
   constructor() {
     super();
@@ -26,6 +27,7 @@ export class Usuario extends Persona {
     this.fechaNacimiento = undefined;
     this.asistencia = this.asistenciaVacia();
     this.listaUsuarios = [];
+    this.direccion = ''; // Cambia "direcion" a "direccion"
   }
 
   public asistenciaVacia(): Asistencia {
@@ -43,6 +45,7 @@ export class Usuario extends Persona {
     };
   }
 
+  // Asegúrate de que el método getNewUsuario también use "direccion"
   public static getNewUsuario(
     cuenta: string,
     correo: string,
@@ -52,7 +55,8 @@ export class Usuario extends Persona {
     nombre: string,
     apellido: string,
     nivelEducacional: NivelEducacional,
-    fechaNacimiento: Date | undefined
+    fechaNacimiento: Date | undefined,
+    direccion: string // Cambia "direcion" a "direccion"
   ) {
     let usuario = new Usuario();
     usuario.cuenta = cuenta;
@@ -64,6 +68,7 @@ export class Usuario extends Persona {
     usuario.apellido = apellido;
     usuario.nivelEducacional = nivelEducacional;
     usuario.fechaNacimiento = fechaNacimiento;
+    usuario.direccion = direccion; // Cambia "direcion" a "direccion"
     return usuario;
   }
 
@@ -121,7 +126,8 @@ export class Usuario extends Persona {
       ${this.nombre}
       ${this.apellido}
       ${this.nivelEducacional.getEducacion()}
-      ${this.getFechaNacimiento()}`;
+      ${this.getFechaNacimiento()}
+      ${this.direccion}`;
   }
 
   public static getListaUsuarios(): Usuario[] {
@@ -135,7 +141,8 @@ export class Usuario extends Persona {
         'Alison', 
         'Garcia', 
         NivelEducacional.buscarNivelEducacional(6)!,
-        new Date(2000, 0, 1)
+        new Date(2000, 0, 1),
+        'calle ejemplo 321'
       ),
       Usuario.getNewUsuario(
         'jperez',
@@ -146,7 +153,8 @@ export class Usuario extends Persona {
         'Juan',
         'Pérez',
         NivelEducacional.buscarNivelEducacional(5)!,
-        new Date(2000, 1, 1)
+        new Date(2000, 1, 1),
+        'calle ejemplo 213'
       ),
       Usuario.getNewUsuario(
         'cmujica',
@@ -157,7 +165,8 @@ export class Usuario extends Persona {
         'Carla',
         'Mujica',
         NivelEducacional.buscarNivelEducacional(6)!,
-        new Date(2000, 2, 1)
+        new Date(2000, 2, 1),
+        'Calle ejemplo 123'
       ),
     ]
   }
@@ -179,6 +188,7 @@ export class Usuario extends Persona {
           this.apellido = usu.apellido;
           this.nivelEducacional = usu.nivelEducacional;
           this.fechaNacimiento = usu.fechaNacimiento;
+          this.direccion = usu.direccion;
           return;
         }
       }
@@ -213,6 +223,7 @@ export class Usuario extends Persona {
       usu.nivelEducacional = this.nivelEducacional;
       usu.fechaNacimiento = this.fechaNacimiento;
       usu.asistencia = this.asistencia;
+      usu.direccion = this.direccion;
       
     }
   }

@@ -14,6 +14,8 @@ import { ScannerService } from 'src/app/services/scanner.service';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { ForumComponent } from 'src/app/components/forum/forum.component';
 import { Asistencia } from 'src/app/model/asistencia';
+import { ForoComponent } from "src/app/components/foro/foro.component";
+import { MisdatosComponent} from "src/app/components/misdatos/misdatos.component";
 
 @Component({
   selector: 'app-inicio',
@@ -21,17 +23,19 @@ import { Asistencia } from 'src/app/model/asistencia';
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
   imports: [
-    CommonModule, 
-    FormsModule, 
-    TranslateModule, 
+    CommonModule,
+    FormsModule,
+    TranslateModule,
     IonContent,
-    HeaderComponent, 
+    HeaderComponent,
     FooterComponent,
-    WelcomeComponent, 
-    QrWebScannerComponent, 
+    WelcomeComponent,
+    QrWebScannerComponent,
     DinosaurComponent,
-    ForumComponent
-  ]
+    ForumComponent,
+    ForoComponent,
+    MisdatosComponent
+]
 })
 export class InicioPage {
   
