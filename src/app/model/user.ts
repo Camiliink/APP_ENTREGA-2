@@ -11,7 +11,7 @@ export class User extends Person {
   password = '';
   secretQuestion = '';
   secretAnswer = '';
-  //db = inject(DataBaseService);
+  //db = inject(DatabaseService);
   image = '';
 
   constructor() {

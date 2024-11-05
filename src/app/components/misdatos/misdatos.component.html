@@ -56,13 +56,10 @@
       <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Imagen</ion-label>
-      <input type="file" (change)="onImageSelected($event)" />
-      <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagen de perfil" style="width: 100px; height: auto;" />
-    </ion-item>
-
     <ion-button expand="full" type="submit" [disabled]="!userForm.form.valid">Guardar Cambios</ion-button>
+  </form>
+</ion-content>
+
 
 
 
