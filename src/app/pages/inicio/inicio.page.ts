@@ -17,6 +17,7 @@ import { Asistencia } from 'src/app/model/asistencia';
 import { ForoComponent } from "src/app/components/foro/foro.component";
 import { MisdatosComponent} from "src/app/components/misdatos/misdatos.component";
 import { MiclaseComponent } from "src/app/components/miclase/miclase.component";
+import { CodigoQrComponent } from "../../components/codigoqr/codigoqr.component";
 
 @Component({
   selector: 'app-inicio',
@@ -36,7 +37,8 @@ import { MiclaseComponent } from "src/app/components/miclase/miclase.component";
     ForumComponent,
     ForoComponent,
     MisdatosComponent,
-    MiclaseComponent
+    MiclaseComponent,
+    CodigoQrComponent
 ]
 })
 export class InicioPage {
