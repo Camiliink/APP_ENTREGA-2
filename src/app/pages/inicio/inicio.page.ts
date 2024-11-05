@@ -44,12 +44,12 @@ import { CodigoQrComponent } from "../../components/codigoqr/codigoqr.component"
 export class InicioPage {
   
   @ViewChild(FooterComponent) footer!: FooterComponent;
-  selectedComponent = 'welcome';
+  selectedComponent = 'codigoqr';
 
   constructor(private auth: AuthService, private scanner: ScannerService) { }
 
   ionViewWillEnter() {
-    this.changeComponent('welcome');
+    this.changeComponent('codigoqr');
   }
 
   async headerClick(button: string) {
@@ -68,7 +68,7 @@ export class InicioPage {
   }
 
   webQrStopped() {
-    this.changeComponent('welcome');
+    this.changeComponent('codigoqr');
   }
 
   showMiclaseComponent(qr: string) {
@@ -78,7 +78,7 @@ export class InicioPage {
       return;
     }
     
-    this.changeComponent('welcome');
+    this.changeComponent('codigoqr');
   }
 
   footerClick(button: string) {
