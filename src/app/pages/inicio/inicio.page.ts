@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { QrWebScannerComponent } from 'src/app/components/qr-web-scanner/qr-web-scanner.component';
-import { Dinosaur } from 'src/app/model/dinosaur';
 import { Capacitor } from '@capacitor/core';
 import { ScannerService } from 'src/app/services/scanner.service';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';

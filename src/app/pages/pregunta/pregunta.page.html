@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>pregunta</ion-title>
+    <ion-title>Pregunta Secreta</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">pregunta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ pregunta || 'Cargando pregunta...' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Respuesta</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="respuesta" 
+          placeholder="Escribe tu respuesta"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="verificarRespuesta()">Verificar Respuesta</ion-button>
+
+      <ion-text color="danger" *ngIf="isAnswerInvalid">
+        <p>Respuesta incorrecta. Intenta nuevamente.</p>
+      </ion-text>
+
+      <ion-button expand="full" color="light" (click)="salir()">Salir</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

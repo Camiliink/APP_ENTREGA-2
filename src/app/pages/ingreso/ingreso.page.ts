@@ -73,7 +73,7 @@ export class IngresoPage implements ViewWillEnter {
   }
 
   passwordRecovery() {
-    
+    this.router.navigate(['/correo']);  
   }
   navigateRouteToDuoc() {
     this.router.navigate(['/map']);
