@@ -11,7 +11,7 @@ import { DatabaseService } from 'src/app/services/database.service';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class CorreoPage implements OnInit {
+export class CorreoPage {
   email: string = '';
   isEmailInvalid: boolean = false; // Bandera para verificar si el correo es inválido
 
@@ -23,7 +23,7 @@ export class CorreoPage implements OnInit {
     private dbService: DatabaseService
   ) {}
 
-  ngOnInit() {}
+ 
 
   // Método para validar el formato del correo y su existencia en la base de datos
   async goToSecretQuestion() {
