@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>ASISTENCIA DUOC</ion-title>
+    <ion-title>{{ 'AppName' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
     </div>
     <div slot="end" class="ion-margin">
       <ion-button shape="round" size="small" (click)="navigateTheme()">
-        Tema
+        {{ 'Login.Text.Issue' | translate }}
         <ion-icon slot="start" name="color-wand-outline"></ion-icon>
       </ion-button>
     </div>
@@ -75,7 +75,7 @@
     {{ 'Login.Button.ForgotPassword' | translate }}
   </ion-button>
   <ion-button color="warning" shape="block" (click)="navigateRouteToDuoc()">
-    {{ 'Ruta a DUOC UC' | translate }}
+    {{ 'Login.Button.Route' | translate }}
   </ion-button>
   
 </ion-footer>

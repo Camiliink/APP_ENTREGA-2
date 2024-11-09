@@ -82,5 +82,29 @@
 
     "CodigoQR.Component.title": "Welcome",
     "CodigoQR.Component.title2": "Scan your class here",
-    "CodigoQR.Component.btn": "Stop QR Scanning"
+    "CodigoQR.Component.btn": "Stop QR Scanning",
+
+    "Login.Text.Issue": "Issue",
+    "Login.Button.Route": "Route",
+
+    "MapPage.text.title": "Running late? Calculate your route to DUOC UC",
+    "MapPage.btn.location": "My location",
+    "MapPage.btn.route": "Route to DUOC UC",
+
+    "PreguntaPage.text.title": "Secret Question",
+    "PreguntaPage.card.title": "Loading question...",
+    "PreguntaPage.label.answer": "Answer",
+    "PreguntaPage.btn.RecoverPassword": "Recover Password",
+    "PreguntaPage.txt.Tryagain": "Incorrect answer. Try again.",
+    "PreguntaPage.btn.exit": "Exit",
+    "PreguntaPage.placeholder": "Write your answer",
+    "PreguntaPage.Step.2": "Step 2: Answer the secret question",
+
+    "CorreoPage.RecoverPassword": "Recover Password",
+    "CorreoPage.Step.1": "Step 1: Enter your email",
+    "CorreoPage.Email": "Email Address",
+    "CorreoPage.ErrorEmail": "The email field cannot be empty.",
+    "CorreoPage.btn.RecoverPassword": "Recover Password",
+    "CorreoPage.btn.exit": "Exit"
+
 }

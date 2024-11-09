@@ -1,3 +1,14 @@
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frame-container {
+  margin-top: 20px; /* Margen superior entre el título y el video */
+  margin-bottom: 20px; /* Margen inferior después del video */
+}
+
 .video {
   border-radius: 15px;
   border: 3px solid gray;
@@ -17,6 +28,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
+  margin-bottom: 20px; /* Margen inferior entre el video y el botón */
 }
 
 /* Estilos para el cuadrado animado */
@@ -32,17 +44,10 @@
   animation: pulse 1.5s infinite ease-in-out;
 }
 
-
-
-
-
-
-
 .stop-button {
-  position: absolute;
-  bottom: 100px; /* Ajusta para poner el botón dentro del recuadro del video */
-  left: 50%;
-  transform: translateX(-50%); /* Centra horizontalmente */
-  z-index: 10; /* Asegura que el botón esté sobre el video y el overlay */
-  padding: 8px 16px;
+  margin-top: 20px; /* Margen superior para el botón */
+}
+
+.ion-text-center {
+  margin-bottom: 200px; /* Margen entre los encabezados y el video */
 }

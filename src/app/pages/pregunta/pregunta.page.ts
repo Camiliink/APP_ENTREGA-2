@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { NavController, IonicModule } from '@ionic/angular'; // Importamos IonicModule
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-pregunta',
@@ -13,7 +15,8 @@ import { ActivatedRoute } from '@angular/router';
   imports: [
     IonicModule,  // Importamos IonicModule, que ya incluye los componentes de Ionic necesarios
     CommonModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ]
 })
 export class PreguntaPage implements OnInit {
@@ -25,7 +28,8 @@ export class PreguntaPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private dbService: DatabaseService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -57,8 +61,7 @@ export class PreguntaPage implements OnInit {
     }
   }
 
-  salir() {
-    // Redirigir a la página de inicio de sesión
-    this.navCtrl.navigateRoot('/ingresar');
+  logout() {
+    this.authService.logout();
   }
 }

@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavController, IonicModule } from '@ionic/angular';
 import { DatabaseService } from 'src/app/services/database.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-correo',
   templateUrl: './correo.page.html',
   styleUrls: ['./correo.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule,TranslateModule]
 })
 export class CorreoPage {
   email: string = '';
@@ -20,7 +22,8 @@ export class CorreoPage {
 
   constructor(
     private navCtrl: NavController,
-    private dbService: DatabaseService
+    private dbService: DatabaseService,
+    private authService: AuthService
   ) {}
 
  
@@ -52,7 +55,7 @@ export class CorreoPage {
   }
 
   // Método para redirigir siempre a la página de inicio de sesión
-  goBack() {
-    this.navCtrl.navigateRoot('/ingresar'); // Redirige siempre a la página de inicio de sesión
+  logout() {
+    this.authService.logout();
   }
 }

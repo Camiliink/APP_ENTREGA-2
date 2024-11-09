@@ -1,9 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';  // Inyectar Router para redirección
 
 @Component({
   selector: 'app-incorrecto',
@@ -14,9 +14,13 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class IncorrectoPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  // Método para redirigir a la página correo
+  navigateToCorreo() {
+    this.router.navigate(['/correo']);
+  }
 }

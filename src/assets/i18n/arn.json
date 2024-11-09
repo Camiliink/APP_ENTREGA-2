@@ -81,6 +81,29 @@
 
     "CodigoQR.Component.title": "¡Küme tünngün!",
     "CodigoQR.Component.title2": "Feypi afkantuymi dungu",
-    "CodigoQR.Component.btn": "Ñamüm QR afkantu"
+    "CodigoQR.Component.btn": "Ñamüm QR afkantu",
+
+    "Login.Text.Issue": "Rakiñ",
+    "Login.Button.Route": "Rüpü",
+
+    "MapPage.text.title": "¿Amuleluymiñ mu? Dugu mülen rüpüme DUOC UC mew",
+    "MapPage.btn.location": "Ñi mülen",
+    "MapPage.btn.route": "Rüpüme DUOC UC mew",
+
+    "PreguntaPage.text.title": "Kuyfi Pewma",
+    "PreguntaPage.card.title": "Pewma dungu ñi trakin...",
+    "PreguntaPage.label.answer": "Dungu",
+    "PreguntaPage.btn.RecoverPassword": "Rokiñwi Duguluwün",
+    "PreguntaPage.txt.Tryagain": "Dungu adüngüngekey. Trürume müle",
+    "PreguntaPage.btn.exit": "Tripa",
+    "PreguntaPage.placeholder": "Ñi pu wün",
+    "PreguntaPage.Step.2": "Ñamku 2: Pelu ñi pülellün",
+
+    "CorreoPage.RecoverPassword": "Ñi Küyün Ñamku",
+    "CorreoPage.Step.1": "Ñamku 1: Iñchiñu kiñe correo",
+    "CorreoPage.Email": "Correo Elektróniko",
+    "CorreoPage.ErrorEmail": "Ñamku wüla inchiñu, ka iñchiñu tañi correo ka rakiduamün.",
+    "CorreoPage.btn.RecoverPassword": "Ñi Küyün Ñamku",
+    "CorreoPage.btn.exit": "Ñiñewün"
 
 }

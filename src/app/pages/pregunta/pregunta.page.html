@@ -1,32 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Pregunta Secreta</ion-title>
+<ion-header [translucent]="true" >
+  <ion-toolbar color="warning">
+    <ion-title>{{ 'AppName' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{ pregunta || 'Cargando pregunta...' }}</ion-card-title>
+      <ion-card-title>{{ 'PreguntaPage.text.title' | translate }}</ion-card-title>
+      <ion-card-title>{{ pregunta || ('PreguntaPage.card.title' | translate) }}</ion-card-title>
+      <p>{{ 'PreguntaPage.Step.2' | translate }}</p>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-label position="stacked">Respuesta</ion-label>
+        <ion-label position="stacked">{{ 'PreguntaPage.label.answer' | translate }}</ion-label>
         <ion-input 
           type="text" 
           [(ngModel)]="respuesta" 
-          placeholder="Escribe tu respuesta"
+          [placeholder]="'PreguntaPage.placeholder' | translate"
           required>
         </ion-input>
       </ion-item>
 
-      <ion-button expand="full" (click)="verificarRespuesta()">Verificar Respuesta</ion-button>
+      <ion-button expand="full" (click)="verificarRespuesta()">{{ 'PreguntaPage.btn.RecoverPassword' | translate }}</ion-button>
 
       <ion-text color="danger" *ngIf="isAnswerInvalid">
-        <p>Respuesta incorrecta. Intenta nuevamente.</p>
+        <p>{{ 'PreguntaPage.txt.Tryagain' | translate }}</p>
       </ion-text>
 
-      <ion-button expand="full" color="light" (click)="salir()">Salir</ion-button>
+      <ion-button expand="full" color="light" (click)="logout()">{{ 'PreguntaPage.btn.exit' | translate }}</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
+

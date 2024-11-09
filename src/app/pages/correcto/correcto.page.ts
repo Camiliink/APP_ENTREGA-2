@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NavController, IonicModule } from '@ionic/angular';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -22,7 +23,8 @@ export class CorrectoPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private dbService: DatabaseService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -42,4 +44,9 @@ export class CorrectoPage implements OnInit {
       this.contrasenna = user.password;
     }
   }
+
+  logout() {
+    this.authService.logout();
+  }
+
 }

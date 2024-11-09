@@ -15,11 +15,12 @@
     </ion-card-header>
     <ion-card-content class="centro-texto">
       <img src="../../../assets/img/incorrecto.avif" alt="">
-      <a #contenido class="boton">{{ 'IncorrectoPage.btn.retry' | translate }}</a>
+      <!-- Modificar para que ejecute la función de navegación -->
+      <a #contenido class="boton" (click)="navigateToCorreo()">{{ 'IncorrectoPage.btn.retry' | translate }}</a>
     </ion-card-content>
   </ion-card>
 
   <div class="footer" style="text-align: center; margin-top: 20px;">
     <p>{{ 'IncorrectoPage.footer' | translate }}</p>
   </div>
-</ion-content>
+</ion-content> 

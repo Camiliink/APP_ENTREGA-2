@@ -82,5 +82,28 @@
 
     "CodigoQR.Component.title":"Bienvenido(a)",
     "CodigoQR.Component.title2":"Escanee su clase aquí",
-    "CodigoQR.Component.btn":"Detener escaneo de QR"
+    "CodigoQR.Component.btn":"Detener escaneo de QR",
+
+    "Login.Text.Issue":"Tema",
+    "Login.Button.Route":"Ruta",
+
+    "MapPage.text.title":"¿Vas atrasado? Calcula tu ruta a DUOC UC",
+    "MapPage.btn.location":"Mi ubicación",
+    "MapPage.btn.route":"Ruta a DUOC UC",
+
+    "PreguntaPage.text.title":"Pregunta Secreta",
+    "PreguntaPage.card.title":"Cargando pregunta...",
+    "PreguntaPage.label.answer":"Respuesta",
+    "PreguntaPage.btn.RecoverPassword":"Recuperar Contraseña",
+    "PreguntaPage.txt.Tryagain":"Respuesta incorrecta. Intenta nuevamente.",
+    "PreguntaPage.btn.exit":"Salir",
+    "PreguntaPage.placeholder":"Escribe tu respuesta",
+    "PreguntaPage.Step.2":"Paso 2:responde la pregunta secreta",
+
+    "CorreoPage.RecoverPassword":"Recuperar Contraseña",
+    "CorreoPage.Step.1":"Paso 1: Ingrese su correo",
+    "CorreoPage.Email":"Correo Electrónico",
+    "CorreoPage.ErrorEmail":"El campo de correo no puede estar vacío.",
+    "CorreoPage.btn.RecoverPassword":"Recuperar Contraseña",
+    "CorreoPage.btn.exit":"Salir"
 }
