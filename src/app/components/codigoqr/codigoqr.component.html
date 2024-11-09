@@ -1,12 +1,12 @@
 <ion-content class="ion-padding ion-text-center" class="video-container">
   <div class="ion-text-center">
-    <h1> Bienvenido(a) </h1>
-    <h1> {{ user.firstName}} {{ user.lastName }} </h1>
+    <h1>¡¡{{ 'CodigoQR.Component.title' | translate }}  {{ user.firstName}} {{ user.lastName }} !! </h1>
+    <h1>{{ 'CodigoQR.Component.title2' | translate }}</h1>
   </div>
   
 
   <ion-button class="stop-button" (click)="stopQrScanning()">
-    Detener escaneo de QR
+    {{ 'CodigoQR.Component.btn' | translate }}
   </ion-button>
 
   <div class="frame">

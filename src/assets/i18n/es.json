@@ -67,5 +67,20 @@
     "ThemePage.Form.DescriptionLabel": "Descripción",
     "ThemePage.Form.DescriptionPlaceholder": "Escribe aquí una descripción...",
     "ThemePage.Form.ToggleLabel": "Activar notificaciones",
-    "ThemePage.Form.CheckboxLabel": "Acepto los términos"
+    "ThemePage.Form.CheckboxLabel": "Acepto los términos",
+
+    "IncorrectoPage.text.title":"¡¡Lo sentimos!!",
+    "IncorrectoPage.text.retry":"Por favor Vuelve a intentarlo",
+    "IncorrectoPage.btn.retry":"Reintentar",
+    "IncorrectoPage.footer":"© 2024 Sistema de Asistencia DUOC. Todos los derechos reservados.",
+    
+    "CorrectoPage.text.title":"¡¡Felicidades ",
+    "CorrectoPage.text.title2":"!!",
+    "CorrectoPage.text.password":"Tu contraseña es:",
+    "CorrectoPage.btn.login":"Iniciar Sesión",
+    "CorrectoPage.footer":"© 2024 Sistema de Asistencia DUOC. Todos los derechos reservados.",
+
+    "CodigoQR.Component.title":"Bienvenido(a)",
+    "CodigoQR.Component.title2":"Escanee su clase aquí",
+    "CodigoQR.Component.btn":"Detener escaneo de QR"
 }

@@ -67,5 +67,20 @@
     "ThemePage.Form.DescriptionLabel": "Description",
     "ThemePage.Form.DescriptionPlaceholder": "Write a description here...",
     "ThemePage.Form.ToggleLabel": "Enable notifications",
-    "ThemePage.Form.CheckboxLabel": "I accept the terms"
+    "ThemePage.Form.CheckboxLabel": "I accept the terms",
+
+    "IncorrectoPage.text.title": "We're sorry!!",
+    "IncorrectoPage.text.retry": "Please try again",
+    "IncorrectoPage.btn.retry": "Retry",
+    "IncorrectoPage.footer": "© 2024 DUOC Attendance System. All rights reserved.",
+
+    "CorrectoPage.text.title": "¡¡Congratulations",
+    "CorrectoPage.text.title2": "!!",
+    "CorrectoPage.text.password": "Your password is:",
+    "CorrectoPage.btn.login": "Log In",
+    "CorrectoPage.footer": "© 2024 DUOC Attendance System. All rights reserved.",
+
+    "CodigoQR.Component.title": "Welcome",
+    "CodigoQR.Component.title2": "Scan your class here",
+    "CodigoQR.Component.btn": "Stop QR Scanning"
 }

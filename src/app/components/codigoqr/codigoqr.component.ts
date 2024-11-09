@@ -6,13 +6,14 @@ import { EventEmitter } from '@angular/core';
 import jsQR, { QRCode } from 'jsqr';
 import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-codigoqr',
   templateUrl: './codigoqr.component.html',
   styleUrls: ['./codigoqr.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule,TranslateModule],
 })
 export class CodigoQrComponent implements OnDestroy {
 

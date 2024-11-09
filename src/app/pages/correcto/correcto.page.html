@@ -1,26 +1,26 @@
 <ion-header [translucent]="true" >
   <ion-toolbar color="warning">
-    <ion-title>Sistema de asistencia Duoc UC</ion-title>
+    <ion-title>{{ 'AppName' | translate }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content #page [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-title class="titulo">¡¡ Felicidades {{nombre}} {{apellido}} !!</ion-title>
+      <ion-title class="titulo">{{ 'CorrectoPage.text.title' | translate }} {{nombre}} {{apellido}} {{ 'CorrectoPage.text.title2' | translate }}</ion-title>
     </ion-card-header>
 
     <div class="centro-texto">
-      <h1 class="titulo">Tu contraseña es :</h1>
+      <h1 class="titulo">{{ 'CorrectoPage.text.password' | translate }}</h1>
       <ion-item class="password">
         <h2>{{contrasenna}}</h2>
       </ion-item>
       <img src="../../../assets/img/correcto.jpg" alt="">
-      <a #contenido class="boton">Iniciar Sesión</a>
+      <a #contenido class="boton">{{ 'CorrectoPage.btn.login' | translate }}</a>
     </div>
   </ion-card>
 
   <div class="footer" style="text-align: center; margin-top: 20px;">
-    <p>© 2024 Sistema de Asistencia DUOC. Todos los derechos reservados.</p>
+    <p>{{ 'CorrectoPage.footer' | translate }}.</p>
   </div>
 </ion-content>

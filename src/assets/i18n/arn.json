@@ -66,5 +66,21 @@
     "ThemePage.Form.DescriptionLabel": "Püllün",
     "ThemePage.Form.DescriptionPlaceholder": "Eymi mülen ta püllün...",
     "ThemePage.Form.ToggleLabel": "Külfünon notificaciones",
-    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi"
+    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi",
+
+    "IncorrectoPage.text.title": "¡Mari Mari!",
+    "IncorrectoPage.text.retry": "Peukayall ta ngen weke müchotuleymi",
+    "IncorrectoPage.btn.retry": "Wekeyel",
+    "IncorrectoPage.footer": "© 2024 DUOC Koyangewün Wallmapu. Tañi ñamkukey ta inan ngüün.",
+
+    "CorrectoPage.text.title": "¡¡Inanewma",
+    "CorrectoPage.text.title2": "!!",
+    "CorrectoPage.text.password": "Fey ta püdmaymi:",
+    "CorrectoPage.btn.login": "Amun Tayin",
+    "CorrectoPage.footer": "© 2024 DUOC Koyangewün Wallmapu. Tañi ñamkukey ta inan ngüün.",
+
+    "CodigoQR.Component.title": "¡Küme tünngün!",
+    "CodigoQR.Component.title2": "Feypi afkantuymi dungu",
+    "CodigoQR.Component.btn": "Ñamüm QR afkantu"
+
 }

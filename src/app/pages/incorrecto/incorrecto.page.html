@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="warning">
     <ion-title #titulo size="large">
-      Sistema de Asistencia DUOC
+      {{ 'AppName' | translate }} 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,17 +9,17 @@
 <ion-content #page [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-title class="titulo">¡¡ Lo sentimos!!</ion-title>
+      <ion-title class="titulo">{{ 'IncorrectoPage.text.title' | translate }}</ion-title>
       <br>
-      <h2 class="titulo">Porfavor Vuelve a intentarlo</h2>
+      <h2 class="titulo">{{ 'IncorrectoPage.text.retry' | translate }}</h2>
     </ion-card-header>
     <ion-card-content class="centro-texto">
       <img src="../../../assets/img/incorrecto.avif" alt="">
-      <a #contenido class="boton">Iniciar Sesion</a>
+      <a #contenido class="boton">{{ 'IncorrectoPage.btn.retry' | translate }}</a>
     </ion-card-content>
   </ion-card>
 
   <div class="footer" style="text-align: center; margin-top: 20px;">
-    <p>© 2024 Sistema de Asistencia DUOC. Todos los derechos reservados.</p>
+    <p>{{ 'IncorrectoPage.footer' | translate }}</p>
   </div>
 </ion-content>
