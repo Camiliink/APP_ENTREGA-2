@@ -104,6 +104,19 @@
     "CorreoPage.Email": "Correo Elektróniko",
     "CorreoPage.ErrorEmail": "Ñamku wüla inchiñu, ka iñchiñu tañi correo ka rakiduamün.",
     "CorreoPage.btn.RecoverPassword": "Ñi Küyün Ñamku",
-    "CorreoPage.btn.exit": "Ñiñewün"
+    "CorreoPage.btn.exit": "Ñiñewün",
+
+    "MisdatosPage.title": "Ñi Kümeke Pewma",
+    "MisdatosPage.label.nameUser": "Ñi Yafol Wüño",
+    "MisdatosPage.label.email": "Elchüfüll Mail",
+    "MisdatosPage.label.password": "Rakin Kontru",
+    "MisdatosPage.label.ask": "Rakin Nütram",
+    "MisdatosPage.label.answer": "Rakin Wünew",
+    "MisdatosPage.label.name": "Ñi Dungu",
+    "MisdatosPage.label.lastName": "Ñi Dungu Üñüm",
+    "MisdatosPage.label.EducationalLevel": "Kimün Pu Püñeñ",
+    "MisdatosPage.label.dateofbirth": "Üla Pewma Ñi Llüke",
+    "MisdatosPage.label.Address": "Küme Ayüwn Dungun",
+    "MisdatosPage.btn": "Lleli Dungu Peñew"
 
 }

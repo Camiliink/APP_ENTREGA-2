@@ -6,6 +6,7 @@ import { IonInput, IonButton, IonLabel, IonItem, IonContent, IonHeader, IonTitle
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { showToast } from 'src/app/tools/message-functions';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { showToast } from 'src/app/tools/message-functions';
   templateUrl: './misdatos.component.html',
   styleUrls: ['./misdatos.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton, IonFabList,  CommonModule, FormsModule]
+  imports: [IonHeader,TranslateModule, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton, IonFabList,  CommonModule, FormsModule]
 })
 export class MisdatosComponent implements OnInit {
   usuario: User; 

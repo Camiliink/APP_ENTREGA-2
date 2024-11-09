@@ -105,5 +105,18 @@
     "CorreoPage.Email":"Correo Electrónico",
     "CorreoPage.ErrorEmail":"El campo de correo no puede estar vacío.",
     "CorreoPage.btn.RecoverPassword":"Recuperar Contraseña",
-    "CorreoPage.btn.exit":"Salir"
+    "CorreoPage.btn.exit":"Salir",
+
+    "MisdatosPage.title":"Mis Datos",
+    "MisdatosPage.label.nameUser":"Nombre de Usuario",
+    "MisdatosPage.label.email":"Email",
+    "MisdatosPage.label.password":"Contraseña",
+    "MisdatosPage.label.ask":"Pregunta Secreta",
+    "MisdatosPage.label.answer":"Respuesta Secreta",
+    "MisdatosPage.label.name":"Nombre",
+    "MisdatosPage.label.lastName":"Apellido",
+    "MisdatosPage.label.EducationalLevel":"Nivel Educacional",
+    "MisdatosPage.label.dateofbirth":"Fecha de Nacimiento",
+    "MisdatosPage.label.Address":"Dirección",
+    "MisdatosPage.btn":"Guardar Cambios"
 }

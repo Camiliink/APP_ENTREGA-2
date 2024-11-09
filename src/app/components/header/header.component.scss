@@ -1,0 +1,23 @@
+/* Contenedor para evitar que el texto se desborde del área */
+ion-title {
+  overflow: hidden; /* Oculta el texto que se sale del borde */
+  width: 100%; /* Ajusta según el ancho que necesites */
+  position: relative;
+}
+
+/* Estilo de la animación del texto */
+.app-name-animation {
+  display: inline-block;
+  white-space: nowrap; /* Evita el salto de línea */
+  animation: slide-left-right 5s linear infinite; /* Configura el tiempo y tipo de animación */
+}
+
+/* Animación para mover el texto de izquierda a derecha */
+@keyframes slide-left-right {
+  0% {
+    transform: translateX(-100%); /* Comienza desde fuera del contenedor a la derecha */
+  }
+  100% {
+    transform: translateX(100%); /* Termina fuera del contenedor a la izquierda */
+  }
+}

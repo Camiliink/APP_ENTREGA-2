@@ -105,6 +105,19 @@
     "CorreoPage.Email": "Email Address",
     "CorreoPage.ErrorEmail": "The email field cannot be empty.",
     "CorreoPage.btn.RecoverPassword": "Recover Password",
-    "CorreoPage.btn.exit": "Exit"
+    "CorreoPage.btn.exit": "Exit",
+
+    "MisdatosPage.title": "My Data",
+    "MisdatosPage.label.nameUser": "Username",
+    "MisdatosPage.label.email": "Email",
+    "MisdatosPage.label.password": "Password",
+    "MisdatosPage.label.ask": "Secret Question",
+    "MisdatosPage.label.answer": "Secret Answer",
+    "MisdatosPage.label.name": "First Name",
+    "MisdatosPage.label.lastName": "Last Name",
+    "MisdatosPage.label.EducationalLevel": "Educational Level",
+    "MisdatosPage.label.dateofbirth": "Date of Birth",
+    "MisdatosPage.label.Address": "Address",
+    "MisdatosPage.btn": "Save Changes"
 
 }
