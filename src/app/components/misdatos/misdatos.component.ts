@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
-import { User } from 'src/app/model/user'; // Asegúrate de que el path sea correcto
+import { User } from 'src/app/model/user'; 
 import { IonInput, IonButton, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle,IonTextarea,IonGrid,IonRow,IonCol,IonIcon,IonCardContent, IonFab, IonFabButton, IonFabList} from '@ionic/angular/standalone'; 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
