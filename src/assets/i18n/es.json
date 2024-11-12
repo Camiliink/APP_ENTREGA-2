@@ -90,6 +90,10 @@
     "MapPage.text.title":"¿Vas atrasado? Calcula tu ruta a DUOC UC",
     "MapPage.btn.location":"Mi ubicación",
     "MapPage.btn.route":"Ruta a DUOC UC",
+    "MapPage.btn.ts1":"Distancia",
+    "MapPage.btn.ts2":"km",
+    "MapPage.btn.ts3":"Estimado",
+    "MapPage.btn.ts4":"minutos",
 
     "PreguntaPage.text.title":"Pregunta Secreta",
     "PreguntaPage.card.title":"Cargando pregunta...",
