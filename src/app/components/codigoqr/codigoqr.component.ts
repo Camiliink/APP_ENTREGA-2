@@ -52,7 +52,8 @@ export class CodigoQrComponent implements OnDestroy {
       const scanResult = await this.scannerService.scan();
       if (scanResult) {
         this.qrData = scanResult;
-        this.scanned.emit(scanResult);
+        this.stopCamera();
+        this.scanned.emit(scanResult); // Emitir QR escaneado
       }
     } catch (error) {
       console.error('Error al escanear en móvil:', error);
@@ -98,7 +99,7 @@ export class CodigoQrComponent implements OnDestroy {
       const data = qrCode.data;
       if (data !== '') {
         this.stopCamera();
-        this.scanned.emit(qrCode.data);
+        this.scanned.emit(qrCode.data); // Emitir QR escaneado
         return true;
       }
     }
