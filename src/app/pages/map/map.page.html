@@ -4,29 +4,30 @@
   <h1 class="ion-text-center margin-top-6">{{ 'MapPage.text.title' | translate }}</h1>
   <!-- El div con id "mapId" será donde se mostrará el mapa -->
   <div id="mapId" style="height: 100%;"></div>
-
 </ion-content>
 
 <ion-footer>
   <ion-toolbar class="ion-text-center" color="primary">
-    <ion-button shape="round" color="secondary" size="small"
-        (click)="goToDUOC()" >
+    <ion-button shape="round" color="secondary" size="small" (click)="goToDUOC()">
       DUOC UC
     </ion-button>
 
-    <ion-button shape="round" color="secondary" size="small"
-        (click)="goToMyPosition()">
-        {{ 'MapPage.btn.location' | translate }}
+    <ion-button shape="round" color="secondary" size="small" (click)="goToMyPosition()">
+      {{ 'MapPage.btn.location' | translate }}
     </ion-button>
 
-    <ion-button shape="round" color="secondary" size="small"
-        (click)="showRouteToDuoc()">
-        {{ 'MapPage.btn.route' | translate }}
+    <ion-button shape="round" color="secondary" size="small" (click)="showRouteToDuoc()">
+      {{ 'MapPage.btn.route' | translate }}
     </ion-button>
 
-    <div *ngIf="distance">
-      <br style="font-weight: bolder;">
-      {{ distance }}
+    <!-- Mostramos distancia y duración solo si están definidos -->
+    <div *ngIf="distance && duration" class="route-info">
+      <p style="font-weight: bold;">
+        {{ 'MapPage.btn.ts1' | translate }}: {{ distance.toFixed(2) }} {{ 'MapPage.btn.ts2' | translate }}
+      </p>
+      <p style="font-weight: bold;">
+        {{ 'MapPage.btn.ts3' | translate }}: {{ duration.toFixed(2) }} {{ 'MapPage.btn.ts4' | translate }}
+      </p>
     </div>
   </ion-toolbar>
 </ion-footer>
