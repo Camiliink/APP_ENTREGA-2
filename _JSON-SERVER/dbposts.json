@@ -81,35 +81,14 @@
     {
       "userId": 7,
       "id": "14",
-      "title": "Apoyo Académico en el Instituto Duoc",
-      "body": "El Instituto Duoc brinda apoyo académico a sus estudiantes para garantizar su éxito en sus estudios. Tutores y recursos están disponibles para ayudarte en tu camino."
+      "title": "Apoyo ",
+      "body": "El Instituto Duoc brinda apoyo académico a sus estudiantes para garantizar su éxito en sus estudios.",
+      "author": "Ana Torres"
     },
     {
-      "userId": 8,
-      "id": "15",
-      "title": "Instituto Duoc: Forjando el Futuro de la Educación",
-      "body": "El Instituto Duoc está a la vanguardia de la educación superior y sigue forjando el futuro de la educación a través de la innovación y la excelencia."
-    },
-    {
-      "id": "822f",
-      "title": "aaa",
-      "body": "toda la locura",
-      "author": "Ana Torres",
-      "date": "",
-      "authorImage": ""
-    },
-    {
-      "id": "1015",
-      "title": "aaa",
-      "body": "toda la locura",
-      "author": "Ana Torres",
-      "date": "",
-      "authorImage": ""
-    },
-    {
-      "id": "eeb8",
-      "title": "aaa",
-      "body": "toda la locura",
+      "id": "5c70",
+      "title": "hola como estas",
+      "body": "hola",
       "author": "Ana Torres",
       "date": "",
       "authorImage": ""
