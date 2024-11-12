@@ -51,9 +51,9 @@ export class InicioPage {
     this.changeComponent('codigoqr');
   }
 
-  // Maneja la interacción con el header
+    // Maneja la interacción con el header
   async headerClick(button: string) {
-    if (button === 'testqr')
+    if (button === 'testqr') {
       this.showMiclaseComponent(Asistencia.jsonAsisExample);
     }
 
@@ -86,6 +86,7 @@ export class InicioPage {
     
     this.changeComponent('codigoqr');  // Si el QR no es válido, vuelve a mostrar el escáner
   }
+
   footerClick(button: string) {
     this.selectedComponent = button;
   }
