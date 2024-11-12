@@ -53,7 +53,7 @@ export class InicioPage {
 
   // Maneja la interacción con el header
   async headerClick(button: string) {
-    if (button === 'testqr') {
+    if (button === 'testqr')
       this.showMiclaseComponent(Asistencia.jsonAsisExample);
     }
 
