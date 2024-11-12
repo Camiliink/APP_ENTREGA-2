@@ -90,6 +90,11 @@
     "MapPage.text.title": "Running late? Calculate your route to DUOC UC",
     "MapPage.btn.location": "My location",
     "MapPage.btn.route": "Route to DUOC UC",
+    "MapPage.btn.ts1": "Distance",
+    "MapPage.btn.ts2": "km",
+    "MapPage.btn.ts3": "Estimated",
+    "MapPage.btn.ts4": "minutes",
+
 
     "PreguntaPage.text.title": "Secret Question",
     "PreguntaPage.card.title": "Loading question...",

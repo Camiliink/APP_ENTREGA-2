@@ -89,6 +89,11 @@
     "MapPage.text.title": "¿Amuleluymiñ mu? Dugu mülen rüpüme DUOC UC mew",
     "MapPage.btn.location": "Ñi mülen",
     "MapPage.btn.route": "Rüpüme DUOC UC mew",
+    "MapPage.btn.ts1": "Mew",
+    "MapPage.btn.ts2": "km",
+    "MapPage.btn.ts3": "Piñeñmawün",
+    "MapPage.btn.ts4": "minutukey",
+
 
     "PreguntaPage.text.title": "Kuyfi Pewma",
     "PreguntaPage.card.title": "Pewma dungu ñi trakin...",

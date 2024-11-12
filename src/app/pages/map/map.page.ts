@@ -132,8 +132,8 @@ export class MapPage implements OnInit {
         const distance = response.routes[0].distance / 1000; // Distancia en kilómetros
         const duration = response.routes[0].duration / 60;   // Duración en minutos
 
-        this.distance = `Distancia: ${distance.toFixed(2)} km `
-            + `, Estimado: ${duration.toFixed(2)} minutos`;
+        this.distance = `{{ 'MapPage.btn.ts1' | translate }}: ${distance.toFixed(2)} {{ 'MapPage.btn.ts2' | translate }} `
+            + `, {{ 'MapPage.btn.ts3' | translate }}: ${duration.toFixed(2)} {{ 'MapPage.btn.ts4' | translate }}`;
       }
 
     });
