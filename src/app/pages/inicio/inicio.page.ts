@@ -52,19 +52,14 @@ export class InicioPage {
   }
 
   async headerClick(button: string) {
-    if (button === 'testqr') {
+    if (button === 'testqr')
       this.showMiclaseComponent(Asistencia.jsonAsisExample);
-    }
-  
-    if (button === 'scan') {
-      if (Capacitor.getPlatform() === 'web') {
-        this.selectedComponent = 'codigoqr'; // En web, selecciona el componente de escaneo QR
-      } else {
-        // En móvil, escanea usando el servicio y muestra el componente de "miclase" si es válido
-        const qrData = await this.scanner.scan();
-        this.showMiclaseComponent(qrData);
-      }
-    }
+
+    if (button === 'scan' && Capacitor.getPlatform() === 'web')
+      this.selectedComponent = 'codigoqr'; // Cambié a 'codigoqr'
+
+    if (button === 'scan' && Capacitor.getPlatform() !== 'web')
+      this.showMiclaseComponent(await this.scanner.scan());
   }
 
   webQrScanned(qr: string) {
