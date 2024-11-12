@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <h1 class="ion-text-center margin-top-6"> ¿Vas atrasado? Calcula tu ruta a DUOC UC</h1>
+  <h1 class="ion-text-center margin-top-6">{{ 'MapPage.text.title' | translate }}</h1>
   <!-- El div con id "mapId" será donde se mostrará el mapa -->
   <div id="mapId" style="height: 100%;"></div>
 
@@ -16,12 +16,12 @@
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="goToMyPosition()">
-      Mi ubicación
+        {{ 'MapPage.btn.location' | translate }}
     </ion-button>
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="showRouteToDuoc()">
-      Ruta a DUOC UC
+        {{ 'MapPage.btn.route' | translate }}
     </ion-button>
 
     <div *ngIf="distance">

@@ -1,13 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>correo</ion-title>
+<ion-header [translucent]="true" >
+  <ion-toolbar color="warning">
+    <ion-title>{{ 'AppName' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">correo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- Tarjeta de contenido -->
+  <ion-card class="center-card">
+    <ion-card-header>
+      <ion-card-title>{{ 'CorreoPage.RecoverPassword' | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text>
+        {{ 'CorreoPage.Step.1' | translate }}
+      </ion-text>
+
+      <!-- Campo de correo -->
+      <ion-item>
+        <ion-label position="floating">{{ 'CorreoPage.Email' | translate }}</ion-label>
+        <ion-input [(ngModel)]="email" placeholder="email@gmail.com"></ion-input>
+      </ion-item>
+
+      <!-- Mensaje de error si el correo es inválido o vacío -->
+      <ion-text color="warning" *ngIf="isEmailInvalid && !email">
+        {{ 'CorreoPage.ErrorEmail' | translate }}
+      </ion-text>
+
+      <!-- Botón de continuar -->
+      <ion-button expand="full" color="warning" [disabled]="!email || isEmailInvalid" (click)="goToSecretQuestion()">
+        {{ 'CorreoPage.btn.RecoverPassword' | translate }}
+      </ion-button>
+      <ion-button expand="full" color="warning" (click)="logout()">{{ 'CorreoPage.btn.exit' | translate }}</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

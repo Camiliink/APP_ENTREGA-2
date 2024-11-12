@@ -1,67 +1,67 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Mis Datos</ion-title>
+    <ion-title>{{ 'MisdatosPage.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <form (ngSubmit)="guardarDatos()" #userForm="ngForm">
     <ion-item>
-      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.nameUser' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.userName" name="userName" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.email' | translate }}</ion-label>
       <ion-input type="email" [(ngModel)]="usuario.email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.password' | translate }}</ion-label>
       <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Pregunta Secreta</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.ask' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.secretQuestion" name="secretQuestion" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Respuesta Secreta</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.answer' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.secretAnswer" name="secretAnswer" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.name' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.firstName" name="firstName" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Apellido</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.lastName' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.lastName" name="lastName" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Nivel Educacional</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.EducationalLevel' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.educationalLevel.name" name="educationalLevel" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Fecha de Nacimiento</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.dateofbirth' | translate }}</ion-label>
       <ion-input type="date" [(ngModel)]="usuario.dateOfBirth" name="dateOfBirth" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Dirección</ion-label>
+      <ion-label position="floating">{{ 'MisdatosPage.label.Address' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
     </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!userForm.form.valid">Guardar Cambios</ion-button>
+    <!-- Botón de guardar -->
+    <ion-button expand="full" type="submit" [disabled]="userForm.invalid">
+      {{ 'Actualizar' | translate }}
+    </ion-button>
     <br>
     <br>
+  
   </form>
 </ion-content>
-
-
-
-

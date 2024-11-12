@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>incorrecto</ion-title>
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title #titulo size="large">
+      {{ 'AppName' | translate }} 
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">incorrecto</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-content #page [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title class="titulo">{{ 'IncorrectoPage.text.title' | translate }}</ion-title>
+      <br>
+      <h2 class="titulo">{{ 'IncorrectoPage.text.retry' | translate }}</h2>
+    </ion-card-header>
+    <ion-card-content class="centro-texto">
+      <img src="../../../assets/img/incorrecto.avif" alt="">
+      <!-- Modificar para que ejecute la función de navegación -->
+      <a #contenido class="boton" (click)="navigateToCorreo()">{{ 'IncorrectoPage.btn.retry' | translate }}</a>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="footer" style="text-align: center; margin-top: 20px;">
+    <p>{{ 'IncorrectoPage.footer' | translate }}</p>
+  </div>
+</ion-content> 

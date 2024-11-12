@@ -37,7 +37,7 @@ export class ForoComponent implements OnInit, OnDestroy {
     });
     this.userSubscription = this.auth.authUser.subscribe((user) => {
       this.user = user ? user : new User();
-    });
+    });this.api.refreshPostList();
   }
 
   ngOnDestroy() {

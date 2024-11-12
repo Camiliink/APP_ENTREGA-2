@@ -1,36 +1,21 @@
-<app-header 
-  (headerClick)="headerClick($event)">
-</app-header>
+<app-header (headerClick)="headerClick($event)"></app-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="content-with-footer">
   <!-- Componente QR Web Scanner -->
-  <app-qrwebscanner 
+  <app-codigoqr 
       *ngIf="selectedComponent === 'codigoqr'" 
       (scanned)="webQrScanned($event)"
       (stopped)="webQrStopped()">
-  </app-qrwebscanner>
-
-  <!-- Componente Welcome -->
-  <app-welcome 
-      *ngIf="selectedComponent === 'welcome'">
-  </app-welcome>
+  </app-codigoqr>
 
   <!-- Componente Forum -->
-  <app-forum 
-      *ngIf="selectedComponent === 'forum'">
-  </app-forum>
+  <app-foro *ngIf="selectedComponent === 'foro'"></app-foro>
 
   <!-- Componente Mi Clase -->
-  <app-forum 
-      *ngIf="selectedComponent === 'miclase'">
-  </app-forum>
+  <app-miclase *ngIf="selectedComponent === 'asis'"></app-miclase>
 
   <!-- Componente Mis Datos -->
-  <app-misdatos
-      *ngIf="selectedComponent === 'misdatos'">
-  </app-misdatos>
+  <app-misdatos *ngIf="selectedComponent === 'misdatos'"></app-misdatos>
 </ion-content>
 
-<app-footer
-  (footerClick)="footerClick($event)">
-</app-footer>
+<app-footer (footerClick)="footerClick($event)" class="fixed-footer"></app-footer>

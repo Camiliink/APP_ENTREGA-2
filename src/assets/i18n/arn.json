@@ -1,5 +1,5 @@
 {
-    "AppName": "Angry-Dinosaurs",
+    "AppName": "Duoc UC Pewmayiñ Tayin",
     "AuthorText": "Rakinon tamiñ:",
     "Author": "Cristián Gómez Vega",
     "Language": "Dugün",
@@ -66,5 +66,57 @@
     "ThemePage.Form.DescriptionLabel": "Püllün",
     "ThemePage.Form.DescriptionPlaceholder": "Eymi mülen ta püllün...",
     "ThemePage.Form.ToggleLabel": "Külfünon notificaciones",
-    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi"
+    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi",
+
+    "IncorrectoPage.text.title": "¡Mari Mari!",
+    "IncorrectoPage.text.retry": "Peukayall ta ngen weke müchotuleymi",
+    "IncorrectoPage.btn.retry": "Wekeyel",
+    "IncorrectoPage.footer": "© 2024 DUOC Koyangewün Wallmapu. Tañi ñamkukey ta inan ngüün.",
+
+    "CorrectoPage.text.title": "¡¡Inanewma",
+    "CorrectoPage.text.title2": "!!",
+    "CorrectoPage.text.password": "Fey ta püdmaymi:",
+    "CorrectoPage.btn.login": "Amun Tayin",
+    "CorrectoPage.footer": "© 2024 DUOC Koyangewün Wallmapu. Tañi ñamkukey ta inan ngüün.",
+
+    "CodigoQR.Component.title": "¡Küme tünngün!",
+    "CodigoQR.Component.title2": "Feypi afkantuymi dungu",
+    "CodigoQR.Component.btn": "Ñamüm QR afkantu",
+
+    "Login.Text.Issue": "Rakiñ",
+    "Login.Button.Route": "Rüpü",
+
+    "MapPage.text.title": "¿Amuleluymiñ mu? Dugu mülen rüpüme DUOC UC mew",
+    "MapPage.btn.location": "Ñi mülen",
+    "MapPage.btn.route": "Rüpüme DUOC UC mew",
+
+    "PreguntaPage.text.title": "Kuyfi Pewma",
+    "PreguntaPage.card.title": "Pewma dungu ñi trakin...",
+    "PreguntaPage.label.answer": "Dungu",
+    "PreguntaPage.btn.RecoverPassword": "Rokiñwi Duguluwün",
+    "PreguntaPage.txt.Tryagain": "Dungu adüngüngekey. Trürume müle",
+    "PreguntaPage.btn.exit": "Tripa",
+    "PreguntaPage.placeholder": "Ñi pu wün",
+    "PreguntaPage.Step.2": "Ñamku 2: Pelu ñi pülellün",
+
+    "CorreoPage.RecoverPassword": "Ñi Küyün Ñamku",
+    "CorreoPage.Step.1": "Ñamku 1: Iñchiñu kiñe correo",
+    "CorreoPage.Email": "Correo Elektróniko",
+    "CorreoPage.ErrorEmail": "Ñamku wüla inchiñu, ka iñchiñu tañi correo ka rakiduamün.",
+    "CorreoPage.btn.RecoverPassword": "Ñi Küyün Ñamku",
+    "CorreoPage.btn.exit": "Ñiñewün",
+
+    "MisdatosPage.title": "Ñi Kümeke Pewma",
+    "MisdatosPage.label.nameUser": "Ñi Yafol Wüño",
+    "MisdatosPage.label.email": "Elchüfüll Mail",
+    "MisdatosPage.label.password": "Rakin Kontru",
+    "MisdatosPage.label.ask": "Rakin Nütram",
+    "MisdatosPage.label.answer": "Rakin Wünew",
+    "MisdatosPage.label.name": "Ñi Dungu",
+    "MisdatosPage.label.lastName": "Ñi Dungu Üñüm",
+    "MisdatosPage.label.EducationalLevel": "Kimün Pu Püñeñ",
+    "MisdatosPage.label.dateofbirth": "Üla Pewma Ñi Llüke",
+    "MisdatosPage.label.Address": "Küme Ayüwn Dungun",
+    "MisdatosPage.btn": "Lleli Dungu Peñew"
+
 }
