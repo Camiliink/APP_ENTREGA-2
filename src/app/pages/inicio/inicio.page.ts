@@ -51,38 +51,40 @@ export class InicioPage {
     this.changeComponent('codigoqr');
   }
 
+    // Maneja la interacción con el header
   async headerClick(button: string) {
     if (button === 'testqr') {
       this.showMiclaseComponent(Asistencia.jsonAsisExample);
     }
-  
+
     if (button === 'scan') {
       if (Capacitor.getPlatform() === 'web') {
-        this.selectedComponent = 'codigoqr'; // En web, selecciona el componente de escaneo QR
+        this.selectedComponent = 'codigoqr';  // Muestra el componente de QR en la web
       } else {
-        // En móvil, escanea usando el servicio y muestra el componente de "miclase" si es válido
-        const qrData = await this.scanner.scan();
-        this.showMiclaseComponent(qrData);
+        this.showMiclaseComponent(await this.scanner.scan());  // Escanea QR en dispositivos móviles
       }
     }
   }
 
+  // Maneja cuando un QR es escaneado en la web
   webQrScanned(qr: string) {
     this.showMiclaseComponent(qr);
   }
 
+  // Maneja cuando el escaneo de QR se detiene
   webQrStopped() {
     this.changeComponent('codigoqr');
   }
 
+  // Muestra el componente de Mi Clase si el código QR es válido
   showMiclaseComponent(qr: string) {
     if (Asistencia.isValidAsistenciaQrCode(qr)) {
       this.auth.qrCodeData.next(qr);
-      this.changeComponent('asis');
+      this.changeComponent('asis');  // Muestra el componente de asistencia
       return;
     }
     
-    this.changeComponent('codigoqr');
+    this.changeComponent('codigoqr');  // Si el QR no es válido, vuelve a mostrar el escáner
   }
 
   footerClick(button: string) {
