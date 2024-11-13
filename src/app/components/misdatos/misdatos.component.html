@@ -12,13 +12,23 @@
     </ion-item>
 
     <ion-item>
+      <ion-label position="floating">{{ 'MisdatosPage.label.name' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.firstName" name="firstName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'MisdatosPage.label.lastName' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.lastName" name="lastName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.email' | translate }}</ion-label>
       <ion-input type="email" [(ngModel)]="usuario.email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">{{ 'MisdatosPage.label.password' | translate }}</ion-label>
-      <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+      <ion-label position="floating">{{ 'MisdatosPage.label.Address' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
     </ion-item>
 
     <ion-item>
@@ -32,23 +42,23 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">{{ 'MisdatosPage.label.name' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.firstName" name="firstName" required></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">{{ 'MisdatosPage.label.lastName' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.lastName" name="lastName" required></ion-input>
-    </ion-item>
-
-    <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.EducationalLevel' | translate }}</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.educationalLevel.name" name="educationalLevel" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">{{ 'MisdatosPage.label.Address' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
+      <ion-label position="floating">{{ 'MisdatosPage.label.dateofbirth' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="dateOfBirth" name="dateOfBirth" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'MisdatosPage.label.password1' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ 'MisdatosPage.label.password2' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
     </ion-item>
 
     <!-- Botón de guardar -->
