@@ -123,6 +123,14 @@
     "MisdatosPage.label.EducationalLevel": "Kimün Pu Püñeñ",
     "MisdatosPage.label.dateofbirth": "Üla Pewma Ñi Llüke",
     "MisdatosPage.label.Address": "Küme Ayüwn Dungun",
-    "MisdatosPage.btn": "Lleli Dungu Peñew"
+    "MisdatosPage.btn": "Lleli Dungu Peñew",
+
+    "ForoComponent.title": "Ñamünñamün Ñi Pülelu",
+    "ForoComponent.label.title": "Ñamün",
+    "ForoComponent.input.title": "Inche ñamün pülelu",
+    "ForoComponent.label.body": "Ñi Descripción",
+    "ForoComponent.input.body": "Ñi ñiwe pülelu",
+    "ForoComponent.button.Clean": "Ñiñelün",
+    "ForoComponent.button.Save": "Ñamün"
 
 }

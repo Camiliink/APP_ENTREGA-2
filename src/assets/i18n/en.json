@@ -124,6 +124,14 @@
     "MisdatosPage.label.EducationalLevel": "Educational Level",
     "MisdatosPage.label.dateofbirth": "Date of Birth",
     "MisdatosPage.label.Address": "Address",
-    "MisdatosPage.btn": "Save Changes"
+    "MisdatosPage.btn": "Save Changes",
+    
+    "ForoComponent.title": "Post Management",
+    "ForoComponent.label.title": "Title",
+    "ForoComponent.input.title": "Enter the title of the post",
+    "ForoComponent.label.body": "Description",
+    "ForoComponent.input.body": "Write the content of the post",
+    "ForoComponent.button.Clean": "Clear",
+    "ForoComponent.button.Save": "Save"
 
 }

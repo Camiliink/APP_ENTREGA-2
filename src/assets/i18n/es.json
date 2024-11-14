@@ -123,5 +123,13 @@
     "MisdatosPage.label.EducationalLevel":"Nivel Educacional",
     "MisdatosPage.label.dateofbirth":"Fecha de Nacimiento",
     "MisdatosPage.label.Address":"Dirección",
-    "MisdatosPage.btn":"Guardar Cambios"
+    "MisdatosPage.btn":"Guardar Cambios",
+
+    "ForoComponent.title":"Gestión de Publicaciones",
+    "ForoComponent.label.title":"Título",
+    "ForoComponent.input.title":"Ingresa el título de la publicación",
+    "ForoComponent.label.body":"Descripción",
+    "ForoComponent.input.body":"Escribe el contenido de la publicación",
+    "ForoComponent.button.Clean":"Limpiar",
+    "ForoComponent.button.Save":"Guardar"
 }

@@ -10,13 +10,14 @@ import { showToast } from 'src/app/tools/message-functions';
 import { addIcons } from 'ionicons';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/model/user';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-foro',
   templateUrl: './foro.component.html',
   styleUrls: ['./foro.component.scss'],
   standalone: true,
-  imports: [IonList, IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule]
+  imports: [TranslateModule,IonList, IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule]
 })
 export class ForoComponent implements OnInit, OnDestroy {
 

@@ -1,0 +1,39 @@
+/* Estilo de la tabla de asistencia */
+.tabla-asistencia {
+  width: 100%;
+  margin: 10px 0; /* Añadir margen entre filas */
+  border-collapse: collapse; /* Para evitar espacios entre celdas */
+}
+
+/* Encabezado de cada celda */
+.tabla-asistencia-header {
+  font-weight: bold;
+  background-color: #F1B634;
+  color: #000000;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: left;
+}
+
+/* Contenido de las celdas */
+.tabla-asistencia-data {
+  padding: 10px;
+  border: 1px solid #F1B634;
+  color: #000000;
+  text-align: left;
+}
+
+/* Estilo para las filas pares e impares */
+.tabla-asistencia-row:nth-child(even) .tabla-asistencia-data {
+  background-color: #FFE57F; /* Color de fondo para filas pares */
+}
+
+.tabla-asistencia-row:nth-child(odd) .tabla-asistencia-data {
+  background-color: #FFFFFF; /* Color de fondo para filas impares */
+}
+
+/* Efecto hover sobre las filas */
+.tabla-asistencia-row:hover .tabla-asistencia-data {
+  background-color: #f1f1f1;
+}

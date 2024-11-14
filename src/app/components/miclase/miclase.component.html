@@ -1,54 +1,55 @@
 <ion-content>
+  <!-- Título de la página -->
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+        Detalles de Asistencia
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <div class="background-image" *ngIf="asis"></div>
-
-  <ion-grid fixed *ngIf="asis" class="asistencia-content">
-    <ion-row>
-      <ion-col size="5">Sede</ion-col>
-      <ion-col size="7">{{ asis.sede }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">ID Asignatura</ion-col>
-      <ion-col size="7">{{ asis.idAsignatura }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Sección</ion-col>
-      <ion-col size="7">{{ asis.seccion }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Nombre Asignatura</ion-col>
-      <ion-col size="7">{{ asis.nombreAsignatura }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Nombre Profesor</ion-col>
-      <ion-col size="7">{{ asis.nombreProfesor }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Día</ion-col>
-      <ion-col size="7">{{ asis.dia }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Bloque Inicio</ion-col>
-      <ion-col size="7">{{ asis.bloqueInicio }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Bloque Término</ion-col>
-      <ion-col size="7">{{ asis.bloqueTermino }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Hora Inicio</ion-col>
-      <ion-col size="7">{{ asis.horaInicio }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Hora Fin</ion-col>
-      <ion-col size="7">{{ asis.horaFin }}</ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <div *ngIf="!asis" class="center-frame">
-    <div class="picture-frame ion-text-center">
-      <img class="you-must-scan" src="/assets/images/you-must-scan.png">
-    </div>
+  <div *ngIf="asis" class="asistencia-content">
+    <ion-grid>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Sede</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.sede }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">ID Asignatura</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.idAsignatura }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Sección</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.seccion }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Nombre Asignatura</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.nombreAsignatura }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Nombre Profesor</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.nombreProfesor }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Día</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.dia }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Bloque Inicio</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.bloqueInicio }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Bloque Término</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.bloqueTermino }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Hora Inicio</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.horaInicio }}</ion-col>
+      </ion-row>
+      <ion-row class="tabla-asistencia-row">
+        <ion-col size="5" class="tabla-asistencia-header">Hora Fin</ion-col>
+        <ion-col size="7" class="tabla-asistencia-data">{{ asis.horaFin }}</ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
-
 </ion-content>
