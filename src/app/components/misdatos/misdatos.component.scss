@@ -1,9 +1,4 @@
 /* General styles */
-ion-header, ion-toolbar, ion-title {
-  background-color: #3880ff;
-  color: #ffffff;
-}
-
 ion-content {
   --padding-start: 12px;
   --padding-end: 12px;
@@ -15,15 +10,14 @@ form {
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #939393;
 }
 
 /* Style for form items */
 ion-item {
-  margin-bottom: 8px;  /* Menos margen entre cada item */
-  --border-color: #ccc;
-  border-radius: 8px;
-  padding: 6px 0;  /* Menos relleno vertical */
+  background-color: #939393; /* Fondo gris para los items * 
+  margin-bottom: 10px; /* Margen entre los items para separarlos */
+  padding: 10px; /* Ajuste del padding para un mejor espaciado */
 }
 
 /* Labels */

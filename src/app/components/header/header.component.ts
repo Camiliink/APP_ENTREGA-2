@@ -1,9 +1,8 @@
+import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { IonicModule } from '@ionic/angular';
-import { NavController } from '@ionic/angular';
+import { IonicModule, NavController } from '@ionic/angular';
 import { logOutOutline, qrCodeOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,18 +13,28 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.scss'],
   standalone: true,
   imports: [
-      CommonModule    // CGV-Permite usar directivas comunes de Angular
-    , FormsModule     // CGV-Permite usar formularios
-    , IonicModule     // CGV-Permite usar componentes de Ionic como IonContent, IonItem, etc.
-    , TranslateModule // CGV-Permite usar pipe 'translate'
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    TranslateModule
   ]
 })
-export class HeaderComponent {
-  
-  @Output() headerClick = new EventEmitter<string>();
+export class HeaderComponent implements OnChanges {
 
-  constructor(private navCtrl: NavController, private authService: AuthService) { 
+  @Output() headerClick = new EventEmitter<string>();
+  @Input() colorTheme: string = 'light'; // Recibir el color del tema desde un componente padre
+
+  constructor(
+    private navCtrl: NavController,
+    private authService: AuthService
+  ) {
     addIcons({ logOutOutline, qrCodeOutline });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['colorTheme']) {
+      this.colorTheme = changes['colorTheme'].currentValue; // Actualizar el tema si cambia
+    }
   }
 
   sendClickEvent(buttonName: string) {
@@ -35,5 +44,4 @@ export class HeaderComponent {
   logout() {
     this.authService.logout();
   }
-
 }

@@ -20,8 +20,7 @@ import { NavController } from '@ionic/angular';
   ]
 })
 export class ThemePage {
-
-  colorTheme: string = '';
+  colorTheme: string = 'light';
 
   constructor(private navCtrl: NavController) { 
     this.colorTheme = 'light';
@@ -37,5 +36,4 @@ export class ThemePage {
   goBack() {
     this.navCtrl.back();
   }
-
 }

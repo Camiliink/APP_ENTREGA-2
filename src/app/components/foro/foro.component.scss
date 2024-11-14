@@ -1,0 +1,78 @@
+/* Tarjeta de Gestión de Publicaciones (Fija en la parte superior) */
+.fixed-card ion-card {
+  margin: 16px; /* Agrega margen alrededor de la tarjeta */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra ligera */
+  background-color: #939393; /* Fondo en el color principal */
+}
+
+/* Título de la tarjeta */
+.fixed-card ion-card-title {
+  font-weight: bold;
+  color: #000000; /* Título en color negro */
+}
+
+/* Subtítulo de la tarjeta */
+.fixed-card ion-card-subtitle {
+  font-size: 14px;
+  color: #000000; /* Subtítulo en color negro */
+}
+
+/* Lista de Publicaciones */
+.post-list {
+  margin-top: 20px; /* Separación entre lista y tarjeta fija */
+}
+
+/* Tarjeta de cada publicación */
+.post-list ion-card {
+  margin: 16px; /* Agrega margen entre la tarjeta de la publicación y sus alrededores */
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #939393; /* Fondo de cada tarjeta de publicación */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Encabezado de cada publicación */
+.post-list ion-card-header h6 {
+  font-size: 12px;
+  color: #000000; /* Texto secundario en color negro */
+}
+
+.post-list ion-card-header h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000; /* Título principal en color negro */
+  margin-top: 4px;
+}
+
+/* Botones de acción en cada publicación */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-buttons ion-fab-button[color="primary"] {
+  --background: #F78B30; /* Botón de edición */
+}
+
+.action-buttons ion-fab-button[color="danger"] {
+  --background: #BF0249; /* Botón de eliminación en rojo */
+}
+
+/* Texto dentro de la tarjeta */
+.post-list ion-card-content p {
+  color: #000000; /* Texto en color negro */
+}
+
+/* Fondo de los elementos de entrada */
+.fixed-card ion-item {
+  --background: #939393; /* Color de fondo para los ion-item */
+  --color: #000000; /* Color de texto negro */
+}
+
+/* Color de texto de los labels */
+.fixed-card ion-label {
+  color: #000000; /* Color de texto negro */
+}

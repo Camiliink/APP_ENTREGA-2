@@ -1,10 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{ 'MisdatosPage.title' | translate }}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+        {{ 'MisdatosPage.title' | translate }} <!-- Título de la página -->
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <form (ngSubmit)="guardarDatos()" #userForm="ngForm">
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.nameUser' | translate }}</ion-label>
@@ -65,8 +67,6 @@
     <ion-button expand="full" type="submit" [disabled]="userForm.invalid">
       {{ 'Actualizar' | translate }}
     </ion-button>
-    <br>
-    <br>
   
   </form>
 </ion-content>

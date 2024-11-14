@@ -1,5 +1,5 @@
 <ion-header [translucent]="true" >
-  <ion-toolbar color="warning">
+  <ion-toolbar color="primary">
     <ion-title>{{ 'AppName' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,19 +19,20 @@
       <!-- Campo de correo -->
       <ion-item>
         <ion-label position="floating">{{ 'CorreoPage.Email' | translate }}</ion-label>
+        <br>
         <ion-input [(ngModel)]="email" placeholder="email@gmail.com"></ion-input>
       </ion-item>
 
       <!-- Mensaje de error si el correo es inválido o vacío -->
-      <ion-text color="warning" *ngIf="isEmailInvalid && !email">
+      <ion-text  *ngIf="isEmailInvalid && !email">
         {{ 'CorreoPage.ErrorEmail' | translate }}
       </ion-text>
 
       <!-- Botón de continuar -->
-      <ion-button expand="full" color="warning" [disabled]="!email || isEmailInvalid" (click)="goToSecretQuestion()">
+      <ion-button expand="full"  [disabled]="!email || isEmailInvalid" (click)="goToSecretQuestion()">
         {{ 'CorreoPage.btn.RecoverPassword' | translate }}
       </ion-button>
-      <ion-button expand="full" color="warning" (click)="logout()">{{ 'CorreoPage.btn.exit' | translate }}</ion-button>
+      <ion-button expand="full"  (click)="logout()">{{ 'CorreoPage.btn.exit' | translate }}</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
