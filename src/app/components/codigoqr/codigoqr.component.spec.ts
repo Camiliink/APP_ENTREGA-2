@@ -1,17 +1,16 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
-import { CodigoqrComponent } from './codigoqr.component';
+import { CodigoQrComponent } from './codigoqr.component';
 
 describe('CodigoqrComponent', () => {
-  let component: CodigoqrComponent;
-  let fixture: ComponentFixture<CodigoqrComponent>;
+  let component: CodigoQrComponent;
+  let fixture: ComponentFixture<CodigoQrComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CodigoqrComponent],
+      declarations: [CodigoQrComponent], // Aquí se corrige el error
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CodigoqrComponent);
+    fixture = TestBed.createComponent(CodigoQrComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
