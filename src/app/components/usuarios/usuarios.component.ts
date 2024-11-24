@@ -48,7 +48,7 @@ export class UsuariosComponent implements OnInit {
 
   // Método para eliminar un usuario
   async eliminarUsuario(id: string) {
-    await this.databaseService.deleteByUserName(id);  // Elimina el usuario de la base de datos
+    await this.databaseService.deleteByUserName( this.usuario.email);  // Elimina el usuario de la base de datos
     showToast('Usuario eliminado correctamente');
     this.cargarUsuarios();  // Recarga la lista de usuarios
   }

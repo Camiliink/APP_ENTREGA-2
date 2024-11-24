@@ -9,6 +9,12 @@
 <ion-content padding>
   <!-- Formulario para crear nuevo usuario -->
   <form (ngSubmit)="crearUsuario()" #userForm="ngForm">
+    
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.userName" name="userName" required></ion-input>
+    </ion-item>
+
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.firstName" name="firstName" required></ion-input>
