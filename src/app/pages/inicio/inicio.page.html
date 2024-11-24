@@ -16,6 +16,8 @@
 
   <!-- Componente Mis Datos -->
   <app-misdatos *ngIf="selectedComponent === 'misdatos'"></app-misdatos>
+  <!-- Componente Usuarios -->
+  <app-usuarios *ngIf="selectedComponent === 'usuarios'"></app-usuarios>
 </ion-content>
 
 <app-footer (footerClick)="footerClick($event)" class="fixed-footer"></app-footer>

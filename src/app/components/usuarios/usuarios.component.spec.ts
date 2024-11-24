@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ForoComponent } from './foro.component';
+import { UsuariosComponent } from './usuarios.component';
 
-describe('ForoComponent', () => {
-  let component: ForoComponent;
-  let fixture: ComponentFixture<ForoComponent>;
+describe('UsuariosComponent', () => {
+  let component: UsuariosComponent;
+  let fixture: ComponentFixture<UsuariosComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ForoComponent],
+      imports: [UsuariosComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ForoComponent);
+    fixture = TestBed.createComponent(UsuariosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

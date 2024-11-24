@@ -17,7 +17,7 @@ import { ForoComponent } from "src/app/components/foro/foro.component";
 import { MisdatosComponent} from "src/app/components/misdatos/misdatos.component";
 import { MiclaseComponent } from "src/app/components/miclase/miclase.component";
 import { CodigoQrComponent } from "../../components/codigoqr/codigoqr.component";
-
+import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.component';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -37,7 +37,8 @@ import { CodigoQrComponent } from "../../components/codigoqr/codigoqr.component"
     ForoComponent,
     MisdatosComponent,
     MiclaseComponent,
-    CodigoQrComponent
+    CodigoQrComponent,
+    UsuariosComponent
 ]
 })
 export class InicioPage {
