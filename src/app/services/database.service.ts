@@ -228,7 +228,7 @@ export class DatabaseService {
     try {
       const q = 'SELECT * FROM USER WHERE userName=? AND password=?;';
       const rows = (await this.db.query(q, [userName, password])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      return rows?.length? this.rowToUser(rows[0]) : undefined;
     } catch (error) {
       showAlertError('DataBaseService.findUser', error);
       return undefined;
@@ -239,7 +239,7 @@ export class DatabaseService {
     try {
       const q = 'SELECT * FROM USER WHERE userName=?;';
       const rows = (await this.db.query(q, [userName])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      return rows?  this.rowToUser(rows[0]) : undefined;
     } catch (error) {
       showAlertError('DataBaseService.findUserByEmail', error);
       return undefined;

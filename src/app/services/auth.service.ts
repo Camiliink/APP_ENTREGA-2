@@ -70,12 +70,12 @@ export class AuthService {
 
   async login(userName: string, password: string): Promise<boolean> {
     try {
-      const authUser = await this.readAuthUser();
+      const authUser = await this.storage.get(this.storageAuthUserKey);
 
       if (authUser) {
         this.authUser.next(authUser);
         this.isFirstLogin.next(false);
-        await this.router.navigate(['/inicio']);
+        await this.router.navigate(['/ingreso']);
         return true;
       } else {
         const user = await this.db.findUser(userName, password);

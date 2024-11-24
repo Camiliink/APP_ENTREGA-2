@@ -1,4 +1,4 @@
-<app-header (headerClick)="headerClick($event)"></app-header>
+<app-header (headerClick)="headerClick($event)" id="saludo"></app-header>
 
 <ion-content [fullscreen]="true" class="content-with-footer">
   <!-- Componente QR Web Scanner -->
@@ -9,7 +9,7 @@
   </app-codigoqr>
 
   <!-- Componente Forum -->
-  <app-foro *ngIf="selectedComponent === 'foro'"></app-foro>
+  <app-foro *ngIf="selectedComponent === 'foro'" id="foro-componente"></app-foro>
 
   <!-- Componente Mi Clase -->
   <app-miclase *ngIf="selectedComponent === 'asis'"></app-miclase>

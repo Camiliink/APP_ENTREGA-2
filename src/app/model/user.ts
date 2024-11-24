@@ -68,7 +68,7 @@ export class User extends Person {
 
   override toString(): string {
     return `\n
-        User name: ${this.userName}\n
+        Username: ${this.userName}\n
         Email: ${this.email}\n
         Password: ${this.password}\n
         secretQuestion: ${this.secretQuestion}\n

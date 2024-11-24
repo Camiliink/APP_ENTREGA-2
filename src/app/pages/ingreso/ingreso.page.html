@@ -40,8 +40,9 @@
         <ion-input 
           label="{{ 'Login.Label.Email' | translate }}" 
           labelPlacement="floating"
-          [(ngModel)]="correo" 
-          placeholder="{{ 'Login.Placeholder.Email' | translate }}">
+          [(ngModel)]="userName" 
+          placeholder="{{ 'Login.Placeholder.Email' | translate }}"
+          id="correo">
         </ion-input>
       </ion-item>
 
@@ -51,7 +52,8 @@
           labelPlacement="floating"
           [(ngModel)]="password" 
           placeholder="{{ 'Login.Placeholder.Password' | translate }}"
-          type="password">
+          type="password"
+          id="password">
         </ion-input>
       </ion-item>
 
