@@ -7,13 +7,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { showToast } from 'src/app/tools/message-functions';
 import { TranslateModule } from '@ngx-translate/core';
+import { DatePickerComponent } from 'src/app/components/date-picker/date-picker.component';
 
 @Component({
   selector: 'app-misdatos',
   templateUrl: './misdatos.component.html',
   styleUrls: ['./misdatos.component.scss'],
   standalone: true,
-  imports: [IonHeader, TranslateModule, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule]
+  imports: [IonHeader, TranslateModule, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent,
+     IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule, DatePickerComponent]
 })
 export class MisdatosComponent{
   usuario: User; 

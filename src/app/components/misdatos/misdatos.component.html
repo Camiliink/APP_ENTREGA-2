@@ -48,10 +48,17 @@
       <ion-input type="text" [(ngModel)]="usuario.educationalLevel.name" name="educationalLevel" required></ion-input>
     </ion-item>
 
+
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.dateofbirth' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="dateOfBirth" name="dateOfBirth" required></ion-input>
+      <app-date-picker 
+        [(ngModel)]="dateOfBirth" 
+        name="dateOfBirth" 
+        label="{{ 'MisdatosPage.label.dateofbirth' | translate }}" 
+        required>
+      </app-date-picker>
     </ion-item>
+    
 
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.password1' | translate }}</ion-label>
