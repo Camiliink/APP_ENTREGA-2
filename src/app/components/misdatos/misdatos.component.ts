@@ -15,29 +15,27 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [IonHeader, TranslateModule, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule]
 })
-export class MisdatosComponent implements OnInit {
+export class MisdatosComponent{
   usuario: User; 
   selectedImage: string | ArrayBuffer | null = null;
   dateOfBirth: string = ''; // Aquí solo lo usaremos para mostrarlo como string en el HTML
-
+  users : User[] = [];
+  
   constructor(private authService: AuthService, private databaseService: DatabaseService) {
     this.usuario = new User(); 
+    
+    this.databaseService.userList.subscribe((users) => {
+      if (users) {
+        this.users = users;
+      }
+    });
+
+    this.authService.readAuthUser().then((usuario) => {
+      this.usuario = usuario ? usuario : new User();
+    });
   }
 
-  async ngOnInit() {
-    const usuarioAlmacenado = await this.authService.readAuthUser();
-    this.usuario = usuarioAlmacenado || new User();
   
-    // Verifica si dateOfBirth es un string y lo convierte a Date
-    if (this.usuario.dateOfBirth && typeof this.usuario.dateOfBirth === 'string') {
-      this.usuario.dateOfBirth = new Date(this.usuario.dateOfBirth);  // Convierte el string a Date
-    }
-  
-    // Ahora convierte la fecha a string para visualización (para el HTML)
-    if (this.usuario.dateOfBirth) {
-      this.dateOfBirth = this.convertDateToString(this.usuario.dateOfBirth);
-    }
-  }
 
   // Función para convertir la fecha a formato dd/mm/yyyy
   convertDateToString(date: Date): string {
@@ -67,9 +65,12 @@ export class MisdatosComponent implements OnInit {
       const isoString = this.convertDateToISOString(this.usuario.dateOfBirth);
       this.usuario.dateOfBirth = new Date(isoString);  // Guardar la fecha como un objeto Date
     }
-  
-    await this.databaseService.saveUser(this.usuario); 
+    this.databaseService.saveUser(this.usuario);
+    this.authService.saveAuthUser(this.usuario); 
+    
     showToast('Datos guardados correctamente');
   }
+
+
   
 }

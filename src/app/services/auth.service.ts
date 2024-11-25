@@ -37,8 +37,8 @@ export class AuthService {
 
   async readAuthUser(): Promise<User | null> {
     try {
-      const user = await this.storage.get(this.storageAuthUserKey) as User | null;
-      this.authUser.next(user);
+      const user = (await this.storage.get(this.storageAuthUserKey)) as User | null;
+      this.authUser.next(user ?? null);
       return user;
     } catch (error) {
       showAlertError('AuthService.readAuthUser', error);

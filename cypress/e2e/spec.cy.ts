@@ -38,7 +38,9 @@ describe('Verificar mi aplicación', () => {
   //     cy.contains('Ingresar').click();
   //     cy.intercept('/inicio').as('route').then(() => {
   //       cy.get('#saludo').contains('Sistema de asistencia Duoc UC');
-  //       cy.get('ion-segment-button[value="foro"]').click();
+  //        
+
+
   //       cy.get('#titulo').type(`Título de prueba ${numero}`);
   //       cy.get('#contenido').type(`Contenido de prueba ${numero}`);
   //       cy.contains('Guardar').click();
@@ -67,7 +69,7 @@ describe('Verificar mi aplicación', () => {
 //         cy.contains(`Título de prueba ${numero}`).should('not.exist');
 //         cy.contains('Cerrar sesión').click();
 //       });
-//     });
+//     });  
 //   })
 
 });

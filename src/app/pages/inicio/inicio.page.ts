@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DinosaurComponent } from 'src/app/components/dinosaur/dinosaur.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { IonContent } from '@ionic/angular/standalone';
@@ -41,12 +41,17 @@ import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.componen
     UsuariosComponent
 ]
 })
-export class InicioPage {
+export class InicioPage implements OnInit{
   
   @ViewChild(FooterComponent) footer!: FooterComponent;
   selectedComponent = 'codigoqr';
 
+
   constructor(private auth: AuthService, private scanner: ScannerService) { }
+
+  async ngOnInit() {
+    const user = await this.auth.readAuthUser(); // Obtén el usuario autenticado
+  }
 
   ionViewWillEnter() {
     this.changeComponent('codigoqr');
