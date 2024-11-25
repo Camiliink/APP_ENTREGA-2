@@ -43,9 +43,18 @@
       <ion-input type="text" [(ngModel)]="usuario.secretAnswer" name="secretAnswer" required></ion-input>
     </ion-item>
 
+    
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.EducationalLevel' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.educationalLevel.name" name="educationalLevel" required></ion-input>
+      <ion-select
+        [(ngModel)]="usuario.educationalLevel"
+        name="educationalLevel"
+        interface="popover"
+        required>
+        <ion-select-option *ngFor="let level of educationalLevels" [value]="level">
+          {{ level.name }}
+        </ion-select-option>
+      </ion-select>
     </ion-item>
 
 
@@ -54,6 +63,7 @@
       <app-date-picker 
         [(ngModel)]="dateOfBirth" 
         name="dateOfBirth" 
+        interface="popover"
         label="{{ 'MisdatosPage.label.dateofbirth' | translate }}" 
         required>
       </app-date-picker>

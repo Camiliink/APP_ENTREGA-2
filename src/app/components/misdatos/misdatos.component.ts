@@ -2,12 +2,13 @@ import { DatabaseService } from './../../services/database.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/model/user'; 
-import { IonInput, IonButton, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonTextarea, IonGrid, IonRow, IonCol, IonIcon, IonCardContent, IonFab, IonFabButton, IonFabList } from '@ionic/angular/standalone'; 
+import { IonInput, IonButton, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonTextarea, IonGrid, IonRow, IonCol, IonIcon, IonCardContent, IonFab, IonFabButton, IonFabList, IonSelect, IonSelectOption } from '@ionic/angular/standalone'; 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { showToast } from 'src/app/tools/message-functions';
 import { TranslateModule } from '@ngx-translate/core';
 import { DatePickerComponent } from 'src/app/components/date-picker/date-picker.component';
+import { EducationalLevel } from 'src/app/model/educational-level';
 
 @Component({
   selector: 'app-misdatos',
@@ -15,13 +16,15 @@ import { DatePickerComponent } from 'src/app/components/date-picker/date-picker.
   styleUrls: ['./misdatos.component.scss'],
   standalone: true,
   imports: [IonHeader, TranslateModule, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol, IonButton, IonIcon, IonContent,
-     IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule, DatePickerComponent]
+     IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule, DatePickerComponent,IonSelect, IonSelectOption]
 })
 export class MisdatosComponent{
   usuario: User; 
   selectedImage: string | ArrayBuffer | null = null;
   dateOfBirth: string = ''; // Aquí solo lo usaremos para mostrarlo como string en el HTML
   users : User[] = [];
+
+  educationalLevels: EducationalLevel[] = EducationalLevel.getLevels();
   
   constructor(private authService: AuthService, private databaseService: DatabaseService) {
     this.usuario = new User(); 
@@ -35,6 +38,7 @@ export class MisdatosComponent{
     this.authService.readAuthUser().then((usuario) => {
       this.usuario = usuario ? usuario : new User();
     });
+    
   }
 
   
@@ -66,6 +70,9 @@ export class MisdatosComponent{
     if (this.usuario.dateOfBirth instanceof Date) {
       const isoString = this.convertDateToISOString(this.usuario.dateOfBirth);
       this.usuario.dateOfBirth = new Date(isoString);  // Guardar la fecha como un objeto Date
+    }
+    if (this.usuario.educationalLevel instanceof EducationalLevel) {
+      this.usuario.educationalLevel = this.usuario.educationalLevel.id as any;
     }
     this.databaseService.saveUser(this.usuario);
     this.authService.saveAuthUser(this.usuario); 
