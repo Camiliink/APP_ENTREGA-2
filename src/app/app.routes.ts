@@ -42,5 +42,9 @@ export const routes: Routes = [
     path: 'inicio',
     loadComponent: () => import('./pages/inicio/inicio.page').then( m => m.InicioPage),
     canActivate: [homeGuard]
+  },  {
+    path: 'registrarme',
+    loadComponent: () => import('./pages/registrarme/registrarme.page').then( m => m.RegistrarmePage)
   },
+
 ];

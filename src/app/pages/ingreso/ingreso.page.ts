@@ -69,7 +69,7 @@ export class IngresoPage implements ViewWillEnter {
   }
 
   registerNewUser() {
-    
+    this.router.navigate(['/registrarme']);
   }
 
   passwordRecovery() {
