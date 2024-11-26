@@ -222,6 +222,18 @@ export class DatabaseService {
       return false;
     }
   }
+  async deleteByUserEmail(email: string): Promise<boolean> {
+    try {
+      const q = 'DELETE FROM USER WHERE email = ?';
+      const result: capSQLiteChanges = await this.db.run(q, [email]);
+      const rowsAffected = result.changes?.changes ?? 0; // Obtén el número de filas afectadas
+      await this.readUsers(); // Actualiza la lista de usuarios
+      return rowsAffected > 0; // Devuelve true si se eliminó un usuario
+    } catch (error) {
+      console.error('Error al eliminar usuario:', error);
+      throw error;
+    }
+  }
 
   // Validar usuario
   async findUser(userName: string, password: string): Promise<User | undefined> {

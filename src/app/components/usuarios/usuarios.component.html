@@ -31,9 +31,51 @@
     </ion-item>
 
     <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Pregunta Secreta</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.secretQuestion" name="secretQuestion" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Respuesta Secreta</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.secretAnswer" name="secretAnswer" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nivel Educacional</ion-label>
+      <ion-select [(ngModel)]="usuario.educationalLevel" name="educationalLevel" interface="popover" required>
+        <ion-select-option *ngFor="let level of educationalLevels" [value]="level">
+          {{ level.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <app-date-picker 
+        [(ngModel)]="usuario.dateOfBirth" 
+        name="dateOfBirth" 
+        label="Fecha de Nacimiento"
+        labelPlacement="floating"
+        required>
+      </app-date-picker>
+    </ion-item>
+
+    <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
     </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Repetir Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="repetirPassword" name="repetirPassword" required></ion-input>
+    </ion-item>
+    <ion-text *ngIf="!contrasenasCoinciden()" color="danger">
+      Las contraseñas no coinciden.
+    </ion-text>
 
     <ion-button expand="full" type="submit" [disabled]="userForm.invalid">
       Crear Usuario
