@@ -43,21 +43,21 @@
       <ion-input type="text" [(ngModel)]="usuario.secretAnswer" name="secretAnswer" required></ion-input>
     </ion-item>
 
-    
+
+    <!-- Nivel Educacional -->
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.EducationalLevel' | translate }}</ion-label>
       <ion-select
-        [(ngModel)]="usuario.educationalLevel"
+        [(ngModel)]="usuario.educationalLevel.id"
         name="educationalLevel"
         interface="popover"
         required>
-        <ion-select-option *ngFor="let level of educationalLevels" [value]="level">
+        <ion-select-option *ngFor="let level of educationalLevels" [value]="level.id">
           {{ level.name }}
         </ion-select-option>
       </ion-select>
     </ion-item>
-
-
+    
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.dateofbirth' | translate }}</ion-label>
       <app-date-picker 
@@ -69,7 +69,6 @@
       </app-date-picker>
     </ion-item>
     
-
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.password1' | translate }}</ion-label>
       <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
@@ -80,10 +79,12 @@
       <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
     </ion-item>
 
-    <!-- Botón de guardar -->
     <ion-button expand="full" type="submit" [disabled]="userForm.invalid">
       {{ 'Actualizar' | translate }}
     </ion-button>
+    
+    <pre>{{ userForm.valid | json }}</pre>
+    
   
   </form>
 </ion-content>
