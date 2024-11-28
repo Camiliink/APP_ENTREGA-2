@@ -1,10 +1,12 @@
+import { Component, EventEmitter, Output, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import { addIcons } from 'ionicons';
+import { homeOutline, qrCodeOutline, pencilOutline, personOutline, bookOutline, peopleOutline } from 'ionicons/icons';
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonFooter, IonToolbar, IonSegment, IonSegmentButton, IonIcon } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { homeOutline, pawOutline, pencilOutline, qrCodeOutline,  bookOutline, personOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-footer',
@@ -12,23 +14,48 @@ import { homeOutline, pawOutline, pencilOutline, qrCodeOutline,  bookOutline, pe
   styleUrls: ['./footer.component.scss'],
   standalone: true,
   imports: [
-      CommonModule    // CGV-Permite usar directivas comunes de Angular
-    , FormsModule     // CGV-Permite usar formularios
-    , TranslateModule // CGV-Permite usar pipe 'translate'
-    , IonFooter, IonToolbar, IonSegment, IonSegmentButton, IonIcon
+    CommonModule,    // Permite usar directivas comunes de Angular
+    FormsModule,     // Permite usar formularios
+    TranslateModule, // Permite usar pipe 'translate'
+    IonFooter, IonToolbar, IonSegment, IonSegmentButton, IonIcon
   ]
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit, OnDestroy {
 
-  selectedButton = 'welcome';
+  usuario: any = {};  // El objeto usuario, que será dinámico y puede tener propiedades diferentes
+  private authUserSubs!: Subscription;
+  selectedButton = 'welcome'; // Valor del botón seleccionado
   @Output() footerClick = new EventEmitter<string>();
 
-  constructor() { 
-    addIcons({ homeOutline, qrCodeOutline, pawOutline, pencilOutline, bookOutline, personOutline });
+  constructor(private auth: AuthService) { 
+    // Registrar los íconos de Ionicons
+    addIcons({
+      homeOutline,
+      qrCodeOutline,
+      pencilOutline,
+      personOutline,
+      bookOutline,
+      peopleOutline
+    });
   }
 
+  ngOnInit() {
+    // Suscripción al observable de usuario
+    this.authUserSubs = this.auth.authUser.subscribe(usuario => {
+      this.usuario = usuario || {};  // Si no hay usuario, asignar un objeto vacío
+      console.log('Usuario actual:', this.usuario);  // Verifica el valor del usuario
+    });
+  }
+
+  ngOnDestroy() {
+    // Cancelar la suscripción cuando el componente sea destruido
+    if (this.authUserSubs) {
+      this.authUserSubs.unsubscribe();
+    }
+  }
+
+  // Emitir el evento al seleccionar un botón
   sendClickEvent($event: any) {
     this.footerClick.emit(this.selectedButton);
   }
-
 }

@@ -1,37 +1,39 @@
 <ion-footer>
-  <ion-toolbar  style="padding-bottom: 4px">
+  <ion-toolbar style="padding-bottom: 4px">
     <ion-segment 
       value="welcome" 
       (ionChange)="sendClickEvent($event)"
       [(ngModel)]="selectedButton"
     >
-      
-      <ion-segment-button value="codigoqr">
+      <!-- Mostrar botón QR solo si el usuario es administrador -->
+      <ion-segment-button value="codigoqr" *ngIf="usuario?.cuenta === 'admin'">
         <ion-icon name="qr-code-outline"></ion-icon>
         {{ "HomePage.Button.QR" | translate }}
       </ion-segment-button>
 
+      <!-- Mostrar botón Foro -->
       <ion-segment-button value="foro">
-        <ion-icon name="pencil-outline" id="foro">foro</ion-icon>
+        <ion-icon name="pencil-outline" id="foro"></ion-icon>
         {{ "HomePage.Button.Forum" | translate }}
       </ion-segment-button>
       
-      <ion-segment-button value="miclase">
+      <!-- Mostrar botón Mi clase -->
+      <ion-segment-button value="miclase" *ngIf="usuario?.cuenta === 'admin'">
         <ion-icon name="book-outline"></ion-icon>
         {{ "HomePage.Button.miclase" | translate }}
       </ion-segment-button>
       
+      <!-- Mostrar botón Mis datos -->
       <ion-segment-button value="misdatos">
         <ion-icon name="person-outline"></ion-icon>
         {{ "HomePage.Button.misdatos" | translate }}
       </ion-segment-button>
       
-      <ion-segment-button value="usuarios">
+      <!-- Mostrar botón Usuarios solo si el usuario es administrador -->
+      <ion-segment-button value="usuarios" *ngIf="usuario?.cuenta === 'admin'">
         <ion-icon name="people-outline"></ion-icon>
         {{ "HomePage.Button.Usuarios" | translate }}
       </ion-segment-button>
-
     </ion-segment>
-
   </ion-toolbar>
 </ion-footer>

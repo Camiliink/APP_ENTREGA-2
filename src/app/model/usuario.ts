@@ -177,8 +177,8 @@ export class Usuario extends Persona {
         'admin',
         'admin',
         NivelEducacional.buscarNivelEducacional(6)!,
-        new Date(2000, 2, 1),
-        'Calle ejemplo 123'
+        new Date(2000, 3, 20),
+        'Providencia'
       ),
     ]
   }
