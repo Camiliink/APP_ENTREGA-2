@@ -11,7 +11,7 @@ import { convertDateToString, convertStringToDate } from '../tools/date-function
   providedIn: 'root'
 })
 export class DatabaseService {
-
+  
   testUser1 = User.getNewUsuario(
     'atorres', 
     'atorres@duocuc.cl', 
@@ -50,6 +50,19 @@ export class DatabaseService {
     new Date(2000, 2, 20),
     'Providencia',
     'default-image.jpg');
+
+  testUser4 = User.getNewUsuario(
+    'admin', 
+    'admin@duocuc.cl', 
+    'admin', 
+    '¿Cuál es tu admin favorito?',
+    'admin',
+    'admin', 
+    'admin', 
+    EducationalLevel.findLevel(6)!,
+    new Date(2000, 3, 20),
+    'Providencia',
+    'default-image.jpg');    
 
   userUpgrades = [
     {
@@ -94,41 +107,91 @@ export class DatabaseService {
 
   constructor(private sqliteService: SQLiteService) { }
 
-  async initializeDataBase() {
+  async initializeDataBase(): Promise<void> {
     try {
-      await this.sqliteService.createDataBase({database: this.dataBaseName, upgrade: this.userUpgrades});
-      this.db = await this.sqliteService.open(this.dataBaseName, false, 'no-encryption', 1, false);
+      // Crear la base de datos y realizar las actualizaciones necesarias
+      await this.createDatabase();
+  
+      // Abrir la base de datos
+      await this.openDatabase();
+  
+      // Crear los usuarios de prueba si es necesario
       await this.createTestUsers();
+  
+      // Leer todos los usuarios y actualizar el estado
       await this.readUsers();
+  
+      console.log('Base de datos inicializada correctamente');
     } catch (error) {
-      showAlertError('DataBaseService.initializeDataBase', error);
+      // Si ocurre un error, lo gestionamos y mostramos un mensaje detallado
+      this.handleError(error);
+    }
+  }
+  
+  private async createDatabase(): Promise<void> {
+    try {
+      const options = { database: this.dataBaseName, upgrade: this.userUpgrades };
+      await this.sqliteService.createDataBase(options);
+      console.log(`Base de datos '${this.dataBaseName}' creada o actualizada correctamente.`);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        throw new Error(`Error al crear la base de datos: ${error.message}`);
+      } else {
+        throw new Error('Error desconocido al crear la base de datos');
+      }
+    }
+  }
+  
+  private async openDatabase(): Promise<void> {
+    try {
+      this.db = await this.sqliteService.open(this.dataBaseName, false, 'no-encryption', 1, false);
+      console.log(`Base de datos '${this.dataBaseName}' abierta correctamente.`);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        throw new Error(`Error al abrir la base de datos: ${error.message}`);
+      } else {
+        throw new Error('Error desconocido al abrir la base de datos');
+      }
+    }
+  }
+  
+  private handleError(error: unknown): void {
+    if (error instanceof Error) {
+      const errorMessage = error.message;
+      showAlertError('DataBaseService.initializeDataBase', errorMessage);
+      console.error('Error detallado:', error); // Proporciona detalles completos del error
+    } else {
+      showAlertError('DataBaseService.initializeDataBase', 'Error desconocido');
+      console.error('Error detallado:', error);
     }
   }
 
   async createTestUsers() {
     try {
-      // Verifica y guarda al usuario 'atorres' si no existe
-      const user1 = await this.readUser(this.testUser1.userName);
-      if (!user1) {
-        await this.saveUser(this.testUser1);
-      }
-  
-      // Verifica y guarda al usuario 'jperez' si no existe
-      const user2 = await this.readUser(this.testUser2.userName);
-      if (!user2) {
-        await this.saveUser(this.testUser2);
-      }
-  
-      // Verifica y guarda al usuario 'cmujica' si no existe
-      const user3 = await this.readUser(this.testUser3.userName);
-      if (!user3) {
-        await this.saveUser(this.testUser3);
-      }
-  
+        const user1 = await this.readUser(this.testUser1.userName);
+        if (!user1) {
+            await this.saveUser(this.testUser1);
+        }
+
+        const user2 = await this.readUser(this.testUser2.userName);
+        if (!user2) {
+            await this.saveUser(this.testUser2);
+        }
+
+        const user3 = await this.readUser(this.testUser3.userName);
+        if (!user3) {
+            await this.saveUser(this.testUser3);
+        }
+
+        const User4 = await this.readUser(this.testUser4.userName);
+        if (!User4) {
+            await this.saveUser(this.testUser4);
+        }
     } catch (error) {
-      showAlertError('DataBaseService.createTestUsers', error);
+        showAlertError('DataBaseService.createTestUsers', error);
     }
-  }
+}
+
 
 
   // Create y Update del CRUD. La creación y actualización de un usuario

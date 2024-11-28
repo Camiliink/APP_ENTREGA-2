@@ -168,6 +168,18 @@ export class Usuario extends Persona {
         new Date(2000, 2, 1),
         'Calle ejemplo 123'
       ),
+      Usuario.getNewUsuario(
+        'admin',
+        'admin@duocuc.cl',
+        'admin',
+        '¿Cuál es tu admin favorito?',
+        'admin',
+        'admin',
+        'admin',
+        NivelEducacional.buscarNivelEducacional(6)!,
+        new Date(2000, 2, 1),
+        'Calle ejemplo 123'
+      ),
     ]
   }
 
