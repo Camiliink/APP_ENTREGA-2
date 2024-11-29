@@ -70,19 +70,18 @@
     
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.password1' | translate }}</ion-label>
-      <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+      <ion-input type="password" [(ngModel)]="usuario.password" name="password1" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.password2' | translate }}</ion-label>
-      <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+      <ion-input type="password" [(ngModel)]="usuario.password" name="password2" required></ion-input>
     </ion-item>
 
     <ion-button expand="full" type="submit">
       {{ 'Actualizar' | translate }}
     </ion-button>
     
-    <pre>{{ userForm.valid | json }}</pre>
     
   
   </form>
