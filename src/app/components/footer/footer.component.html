@@ -6,7 +6,7 @@
       [(ngModel)]="selectedButton"
     >
       <!-- Mostrar botón QR solo si el usuario es administrador -->
-      <ion-segment-button value="codigoqr" *ngIf="usuario?.userName !== 'admin'">
+      <ion-segment-button value="codigoqr" *ngIf="usuario?.userName !== 'admin'" value="qr">
         <ion-icon name="qr-code-outline"></ion-icon>
         {{ "HomePage.Button.QR" | translate }}
       </ion-segment-button>
