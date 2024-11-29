@@ -131,5 +131,24 @@
     "ForoComponent.label.body":"Descripción",
     "ForoComponent.input.body":"Escribe el contenido de la publicación",
     "ForoComponent.button.Clean":"Limpiar",
-    "ForoComponent.button.Save":"Guardar"
+    "ForoComponent.button.Save":"Guardar",
+
+    "UsuarioComponent.label.username":"Nombre de Usuario",
+    "UsuarioComponent.label.name":"Nombre",
+    "UsuarioComponent.label.lastname":"Apellido",
+    "UsuarioComponent.label.email":"Correo electrónico",
+    "UsuarioComponent.label.address":"Dirección",
+    "UsuarioComponent.label.secretquestion":"Pregunta Secreta",
+    "UsuarioComponent.label.secretanswer":"Respuesta Secreta",
+    "UsuarioComponent.label.educationallevel":"Nivel Educacional",
+    "UsuarioComponent.label.password":"Contraseña",
+    "UsuarioComponent.label.repeatpassword":"Repetir Contraseña",
+    "UsuarioComponent.text.passwordsnot":"Las contraseñas no coinciden.",
+    "UsuarioComponent.btn.createuser":"Crear Usuario",
+    "UsuarioComponent.btn.exit":"Salir",
+    "UsuarioComponent.label.dateofbirth":"Fecha de Nacimiento",
+    "UsuarioComponent.btn.eliminate":"Eliminar",
+
+    "RegistroPages.title":"Registrarme",
+    "HomePage.Button.Usuarios":"Usuarios"
 }

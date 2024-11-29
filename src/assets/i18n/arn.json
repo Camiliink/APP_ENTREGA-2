@@ -131,6 +131,25 @@
     "ForoComponent.label.body": "Ñi Descripción",
     "ForoComponent.input.body": "Ñi ñiwe pülelu",
     "ForoComponent.button.Clean": "Ñiñelün",
-    "ForoComponent.button.Save": "Ñamün"
+    "ForoComponent.button.Save": "Ñamün",
+
+    "UsuarioComponent.label.username": "Ñamkülelu",
+    "UsuarioComponent.label.name": "Ñamün",
+    "UsuarioComponent.label.lastname": "Ñamün Ñiwe",
+    "UsuarioComponent.label.email": "Antü Ñamkülelu",
+    "UsuarioComponent.label.address": "Ñi Mapu",
+    "UsuarioComponent.label.secretquestion": "Ñamün Pidü",
+    "UsuarioComponent.label.secretanswer": "Ñamün Rüpü",
+    "UsuarioComponent.label.educationallevel": "Ñamkülelu Mew",
+    "UsuarioComponent.label.password": "Ñi Rüpü",
+    "UsuarioComponent.label.repeatpassword": "Ñi Rüpü Ñi Kürüf",
+    "UsuarioComponent.text.passwordsnot": "Ñi Rüpü Ñi Kürüf ñi rakiduam",
+    "UsuarioComponent.btn.createuser": "Ñamkülelu",
+    "UsuarioComponent.label.dateofbirth": "Ñamkuelün mew",
+    "UsuarioComponent.btn.exit": "Ñamkülelu Ñi Pürün",
+    "UsuarioComponent.btn.eliminate": "Ñi Pürün",
+
+    "RegistroPages.title": "Ñamkuelün",
+    "HomePage.Button.Usuarios": "Ñamkuelün"
 
 }

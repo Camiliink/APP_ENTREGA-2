@@ -132,6 +132,25 @@
     "ForoComponent.label.body": "Description",
     "ForoComponent.input.body": "Write the content of the post",
     "ForoComponent.button.Clean": "Clear",
-    "ForoComponent.button.Save": "Save"
+    "ForoComponent.button.Save": "Save",
+
+    "UsuarioComponent.label.username": "Username",
+    "UsuarioComponent.label.name": "First Name",
+    "UsuarioComponent.label.lastname": "Last Name",
+    "UsuarioComponent.label.email": "Email",
+    "UsuarioComponent.label.address": "Address",
+    "UsuarioComponent.label.secretquestion": "Secret Question",
+    "UsuarioComponent.label.secretanswer": "Secret Answer",
+    "UsuarioComponent.label.educationallevel": "Educational Level",
+    "UsuarioComponent.label.password": "Password",
+    "UsuarioComponent.label.repeatpassword": "Repeat Password",
+    "UsuarioComponent.text.passwordsnot": "Passwords do not match.",
+    "UsuarioComponent.btn.createuser": "Create User",
+    "UsuarioComponent.label.dateofbirth": "Date of Birth",
+    "UsuarioComponent.btn.exit": "Exit",
+    "UsuarioComponent.btn.eliminate": "Delete",
+
+    "RegistroPages.title": "Register",
+    "HomePage.Button.Usuarios": "Users"
 
 }
