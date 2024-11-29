@@ -6,19 +6,19 @@
       [(ngModel)]="selectedButton"
     >
       <!-- Mostrar botón QR solo si el usuario es administrador -->
-      <ion-segment-button value="codigoqr" *ngIf="usuario?.cuenta === 'admin'">
+      <ion-segment-button value="codigoqr" *ngIf="usuario?.userName !== 'admin'">
         <ion-icon name="qr-code-outline"></ion-icon>
         {{ "HomePage.Button.QR" | translate }}
       </ion-segment-button>
 
       <!-- Mostrar botón Foro -->
-      <ion-segment-button value="foro">
+      <ion-segment-button value="foro" >
         <ion-icon name="pencil-outline" id="foro"></ion-icon>
         {{ "HomePage.Button.Forum" | translate }}
       </ion-segment-button>
       
       <!-- Mostrar botón Mi clase -->
-      <ion-segment-button value="miclase" *ngIf="usuario?.cuenta === 'admin'">
+      <ion-segment-button value="miclase" *ngIf="usuario?.userName !== 'admin'">
         <ion-icon name="book-outline"></ion-icon>
         {{ "HomePage.Button.miclase" | translate }}
       </ion-segment-button>
