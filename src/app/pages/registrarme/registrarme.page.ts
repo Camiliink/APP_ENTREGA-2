@@ -1,8 +1,19 @@
 import { Component, OnInit } from '@angular/core'; 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { 
+  IonContent, 
+  IonHeader, 
+  IonTitle, 
+  IonToolbar, 
+  IonIcon, 
+  IonFab, 
+  IonFabButton 
+} from '@ionic/angular/standalone';
+import { AuthService } from 'src/app/services/auth.service';
 import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.component'; // Ruta ajustada para el componente Usuarios
+import { addIcons } from 'ionicons'; // Importación para íconos
+import { logOutOutline } from 'ionicons/icons'; // Importación del ícono de cerrar sesión
 
 @Component({
   selector: 'app-registrarme',
@@ -10,20 +21,29 @@ import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.componen
   styleUrls: ['./registrarme.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
+    FormsModule,
     IonContent,
     IonHeader,
     IonTitle,
     IonToolbar,
-    CommonModule,
-    FormsModule,
+    IonIcon,
+    IonFab,
+    IonFabButton, // Agregado para soportar fab-button
     UsuariosComponent // Importa UsuariosComponent aquí
   ]
 })
 export class RegistrarmePage implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private authService: AuthService) { 
+    // Registrar el ícono de logout
+    addIcons({ logOutOutline });
   }
 
+  ngOnInit() {}
+
+  logout() {
+    this.authService.logout(); // Lógica de cierre de sesión
+    console.log('Sesión cerrada');
+  }
 }

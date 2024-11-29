@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user'; 
 import { DatabaseService } from 'src/app/services/database.service';
 import { showToast } from 'src/app/tools/message-functions';
-import { EducationalLevel } from 'src/app/model/educational-level'; // Adjust the path as necessary
+import { EducationalLevel } from 'src/app/model/educational-level'; 
 import { AuthService } from 'src/app/services/auth.service';
-import { IonicModule, IonInput, IonButton, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonTextarea, IonGrid, IonRow, IonCol, IonIcon, IonCardContent, IonFab, IonFabButton, IonFabList } from '@ionic/angular'; 
+import { IonicModule } from '@ionic/angular'; 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -72,5 +72,9 @@ export class UsuariosComponent implements OnInit {
       console.error('Error al eliminar usuario:', error);
       showToast('Hubo un error al intentar eliminar el usuario');
     }
+  }
+  logout() {
+    this.authService.logout(); // Lógica de cierre de sesión
+    console.log('Sesión cerrada');
   }
 }
