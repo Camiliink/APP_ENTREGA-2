@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { DatePickerComponent } from '../date-picker/date-picker.component';
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -23,54 +24,53 @@ import { DatePickerComponent } from '../date-picker/date-picker.component';
   ]
 })
 export class UsuariosComponent implements OnInit {
-  usuarios: User[] = [];  // Lista de usuarios
-  usuario: User = new User();  // Usuario vacío para crear uno nuevo
-
+  usuarios: User[] = [];
+  usuario: User = new User();
   educationalLevels: EducationalLevel[] = EducationalLevel.getLevels();
-  repetirPassword: string = ''; // Campo adicional para repetir contraseña
+  repetirPassword: string = '';
+  esAdmin: boolean = false; // Indica si el usuario actual es administrador
 
-  constructor(private databaseService: DatabaseService) {}
+  constructor(private databaseService: DatabaseService, private authService: AuthService) {}
 
-  ngOnInit() {
-    this.cargarUsuarios();  // Cargar la lista de usuarios al iniciar el componente
+  async ngOnInit() {
+    this.esAdmin = await this.authService.esAdmin(); // Determina si el usuario es administrador
+    if (this.esAdmin) {
+      this.cargarUsuarios(); // Cargar usuarios solo si es administrador
+    }
   }
 
-  // Método para cargar la lista de usuarios desde la base de datos
   async cargarUsuarios() {
-    this.usuarios = await this.databaseService.readUsers();  // Obtiene los usuarios de la base de datos
+    this.usuarios = await this.databaseService.readUsers();
   }
 
- // Valida si las contraseñas coinciden
-contrasenasCoinciden(): boolean {
-  return this.usuario.password === this.repetirPassword;
-}
-
-// Modifica el método para evitar guardar si las contraseñas no coinciden
-async crearUsuario() {
-  if (!this.contrasenasCoinciden()) {
-    showToast('Las contraseñas no coinciden');
-    return;
+  contrasenasCoinciden(): boolean {
+    return this.usuario.password === this.repetirPassword;
   }
-  if (this.usuario.firstName && this.usuario.lastName && this.usuario.email) {
-    await this.databaseService.saveUser(this.usuario);
-    showToast('Usuario creado correctamente');
-    this.usuario = new User();
-    this.repetirPassword = ''; // Reinicia el campo de repetir contraseña
-    this.cargarUsuarios();
-  } else {
-    showToast('Por favor, complete todos los campos requeridos');
-  }
-}
 
-  // Método para eliminar un usuario
+  async crearUsuario() {
+    if (!this.contrasenasCoinciden()) {
+      showToast('Las contraseñas no coinciden');
+      return;
+    }
+    if (this.usuario.firstName && this.usuario.lastName && this.usuario.email) {
+      await this.databaseService.saveUser(this.usuario);
+      showToast('Usuario creado correctamente');
+      this.usuario = new User();
+      this.repetirPassword = '';
+      this.cargarUsuarios();
+    } else {
+      showToast('Por favor, complete todos los campos requeridos');
+    }
+  }
+
   async eliminarUsuario(email: string) {
     try {
-      await this.databaseService.deleteByUserEmail(email); // Cambia este método si es necesario
+      await this.databaseService.deleteByUserEmail(email);
       showToast('Usuario eliminado correctamente');
-      this.cargarUsuarios(); // Recarga la lista actualizada
+      this.cargarUsuarios();
     } catch (error) {
       console.error('Error al eliminar usuario:', error);
       showToast('Hubo un error al intentar eliminar el usuario');
     }
-}
+  }
 }

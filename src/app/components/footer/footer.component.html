@@ -30,7 +30,7 @@
       </ion-segment-button>
       
       <!-- Mostrar botón Usuarios solo si el usuario es administrador -->
-      <ion-segment-button value="usuarios" *ngIf="usuario?.cuenta === 'admin'">
+      <ion-segment-button value="usuarios" *ngIf="usuario?.userName === 'admin'">
         <ion-icon name="people-outline"></ion-icon>
         {{ "HomePage.Button.Usuarios" | translate }}
       </ion-segment-button>

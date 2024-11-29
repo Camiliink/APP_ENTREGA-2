@@ -18,6 +18,12 @@ export class AuthService {
 
   constructor(private router: Router, private db: DatabaseService, private storage: Storage) {}
 
+// Método simulado: Reemplazar con lógica real
+async esAdmin(): Promise<boolean> {
+  const currentUser = await this.readAuthUser(); // Implementa este método
+  return currentUser?.userName === 'admin'; // Cambia 'role' según tu modelo
+}
+
   async initializeAuthService() {
     try {
       await this.storage.create();
