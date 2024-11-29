@@ -19,25 +19,29 @@ import { EducationalLevel } from 'src/app/model/educational-level';
      IonCardContent, IonFab, IonFabButton, IonFabList, CommonModule, FormsModule, DatePickerComponent, IonSelect, IonSelectOption]
 })
 export class MisdatosComponent implements OnInit {
-  usuario: User; 
+  usuario: User;
   selectedImage: string | ArrayBuffer | null = null;
-  dateOfBirth: string = ''; 
+  dateOfBirth: string = '';
   users: User[] = [];
   educationalLevels: EducationalLevel[] = [];
 
   constructor(private authService: AuthService, private databaseService: DatabaseService) {
-    this.usuario = new User(); 
+    this.usuario = new User();
   }
 
   ngOnInit() {
     this.educationalLevels = EducationalLevel.getLevels();
-    
+  
     this.authService.readAuthUser().then((usuario) => {
       this.usuario = usuario ? usuario : new User();
       
-      // Asegura que el nivel educacional sea un objeto completo
-      if (typeof this.usuario.educationalLevel === 'number') {
-        this.usuario.educationalLevel = EducationalLevel.findLevel(this.usuario.educationalLevel) || new EducationalLevel();
+      // Asegura que el nivel educacional esté siempre definido.
+      if (!this.usuario.educationalLevel) {
+        this.usuario.educationalLevel = EducationalLevel.getLevels()[0]; // Asignar el primer nivel por defecto
+      } else {
+        if (typeof this.usuario.educationalLevel === 'number') {
+          this.usuario.educationalLevel = EducationalLevel.findLevel(this.usuario.educationalLevel) || EducationalLevel.getLevels()[0];
+        }
       }
     });
   }
@@ -57,14 +61,17 @@ export class MisdatosComponent implements OnInit {
       this.usuario.dateOfBirth = new Date(isoString);
     }
 
-    // Convierte el nivel educacional a id antes de guardar en la base de datos si es necesario
-    const educationalLevelId = this.usuario.educationalLevel ? this.usuario.educationalLevel.id : null;
-    this.usuario.educationalLevel = educationalLevelId as any;
-    
+    // Verificar si el nivel educativo es válido antes de guardarlo
+    if (!this.usuario.educationalLevel || !this.usuario.educationalLevel.id) {
+      this.usuario.educationalLevel = EducationalLevel.getLevels()[0];  // Asignar valor predeterminado si no hay nivel
+    }
+
+    const educationalLevelId = this.usuario.educationalLevel ? this.usuario.educationalLevel.id : EducationalLevel.getLevels()[0].id;
+
     try {
       // Guardar usuario en la base de datos
       await this.databaseService.saveUser(this.usuario);
-      await this.authService.saveAuthUser(this.usuario); 
+      await this.authService.saveAuthUser(this.usuario);
       showToast('Datos guardados correctamente');
     } catch (error) {
       showToast('Error al guardar los datos');
@@ -72,10 +79,12 @@ export class MisdatosComponent implements OnInit {
     }
   }
 
+  // Método convertDateToISOString: convertir la fecha a formato ISO
   convertDateToISOString(date: Date): string {
     const year = date.getFullYear();
-    const month = ('0' + (date.getMonth() + 1)).slice(-2);
-    const day = ('0' + date.getDate()).slice(-2);
-    return `${year}-${month}-${day}`;
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);  // Asegura que el mes tenga dos dígitos
+    const day = ('0' + date.getDate()).slice(-2);  // Asegura que el día tenga dos dígitos
+    return `${year}-${month}-${day}`;  // Devuelve la fecha en formato YYYY-MM-DD
   }
 }
+

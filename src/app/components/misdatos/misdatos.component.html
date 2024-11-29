@@ -2,7 +2,7 @@
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>
-        {{ 'MisdatosPage.title' | translate }} <!-- Título de la página -->
+        {{ 'MisdatosPage.title' | translate }} 
       </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -44,7 +44,6 @@
     </ion-item>
 
 
-    <!-- Nivel Educacional -->
     <ion-item>
       <ion-label position="floating">{{ 'MisdatosPage.label.EducationalLevel' | translate }}</ion-label>
       <ion-select
@@ -79,7 +78,7 @@
       <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
     </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="userForm.invalid">
+    <ion-button expand="full" type="submit">
       {{ 'Actualizar' | translate }}
     </ion-button>
     
