@@ -3,42 +3,42 @@
   <div *ngIf="!esAdmin">
     <form (ngSubmit)="crearUsuario()" #userForm="ngForm">
       <ion-item>
-        <ion-label position="floating">Nombre de Usuario</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.username' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="usuario.userName" name="userName" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.name' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="usuario.firstName" name="firstName" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Apellido</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.lastname' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="usuario.lastName" name="lastName" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.email' | translate }}</ion-label>
         <ion-input type="email" [(ngModel)]="usuario.email" name="email" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Dirección</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.address' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="usuario.address" name="address" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Pregunta Secreta</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.secretquestion' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="usuario.secretQuestion" name="secretQuestion" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Respuesta Secreta</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.secretanswer' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="usuario.secretAnswer" name="secretAnswer" required></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Nivel Educacional</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.educationallevel' | translate }}</ion-label>
         <ion-select [(ngModel)]="usuario.educationalLevel" name="educationalLevel" interface="popover" required>
           <ion-select-option *ngFor="let level of educationalLevels" [value]="level">
             {{ level.name }}
@@ -50,30 +50,30 @@
         <app-date-picker 
           [(ngModel)]="usuario.dateOfBirth" 
           name="dateOfBirth" 
-          label="Fecha de Nacimiento"
+          label="{{ 'UsuarioComponent.label.dateofbirth' | translate }}"
           labelPlacement="floating"
           required>
         </app-date-picker>
       </ion-item>
   
       <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.password' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-label position="floating">Repetir Contraseña</ion-label>
+        <ion-label position="floating">{{ 'UsuarioComponent.label.repeatpassword' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="repetirPassword" name="repetirPassword" required></ion-input>
       </ion-item>
       <ion-text *ngIf="!contrasenasCoinciden()" color="danger">
-        Las contraseñas no coinciden.
+        {{ 'UsuarioComponent.text.passwordsnot' | translate }}
       </ion-text>
       <ion-button expand="full" type="submit" [disabled]="userForm.invalid">
-        Crear Usuario
+        {{ 'UsuarioComponent.btn.createuser' | translate }}
       </ion-button>
         <!-- Botón Salir -->
       <ion-button expand="block" color="primary" (click)="logout()">
-        Salir
+        {{ 'UsuarioComponent.btn.exit' | translate }}
       </ion-button>
     </form>
   </div>
@@ -85,7 +85,7 @@
         <ion-card-title>{{ user.firstName }} {{ user.lastName }} </ion-card-title>
         <ion-card-subtitle>({{ user.email }})</ion-card-subtitle>
         <ion-button  class="eliminar" fill="clear" color="danger" (click)="eliminarUsuario(user.email)">
-          Eliminar
+          {{ 'UsuarioComponent.btn.eliminate' | translate }}
         </ion-button>
       </ion-card>
     </ion-list>

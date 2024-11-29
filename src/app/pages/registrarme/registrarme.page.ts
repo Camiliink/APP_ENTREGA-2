@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.component'; // Ruta ajustada para el componente Usuarios
 import { addIcons } from 'ionicons'; // Importación para íconos
 import { logOutOutline } from 'ionicons/icons'; // Importación del ícono de cerrar sesión
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-registrarme',
@@ -30,7 +31,8 @@ import { logOutOutline } from 'ionicons/icons'; // Importación del ícono de ce
     IonIcon,
     IonFab,
     IonFabButton, // Agregado para soportar fab-button
-    UsuariosComponent // Importa UsuariosComponent aquí
+    UsuariosComponent, // Importa UsuariosComponent aquí
+    TranslateModule
   ]
 })
 export class RegistrarmePage implements OnInit {
